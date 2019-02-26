@@ -130,7 +130,7 @@
   <!-- マイク -->
   <div class="masc none"></div>
   <div class="micWrap micOut">
-    <p>どの<span>惑星</span>を選びます?</p>
+    <p>どの<span>惑星</span>を選びますか?</p>
     <div class="micImg">
       <i class="fa fa-microphone mic" aria-hidden="true"></i>
       <div class="volume-viewer-volume"></div>
