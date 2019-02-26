@@ -57,6 +57,7 @@ setTimeout(function () {
   $('#stage').addClass('moveani');
 }, 1500);
 
+// クリック操作
 $(function () {
   //画像変更処理
   $('.infoBtn img').hover(function () {
@@ -210,6 +211,7 @@ $(function () {
   });
 });
 
+// 戻り禁止
 history.pushState(null, null, null);
 $(window).on('popstate', function (event) {
   if (!event.originalEvent.state) {
@@ -348,6 +350,7 @@ let speechtime;
 
 // マイク
 let manager;
+
 // テクスチャーリスト
 let manifest = [{
     id: 'sun',
@@ -932,6 +935,7 @@ neptuneText = new THREE.Sprite(neptuneimageText.TextImg);
 neptuneText.position.y = 27;
 neptuneText.scale.set(50, 20, 40);
 targetTextNeptune.push(neptuneText);
+
 //ピッキング処理
 document.addEventListener('mousedown', clickPosition, false);
 
@@ -952,7 +956,6 @@ function clickPosition(event) {
   }
 
   // オブジェクトの取得
-  //メッシュ
   let interSu = raycaster.intersectObjects(targetSun);
   let interMe = raycaster.intersectObjects(targetMercury);
   let interVe = raycaster.intersectObjects(targetVenus);
@@ -978,7 +981,7 @@ function clickPosition(event) {
 
   //マウス操作
   if (interSu.length > 0 || interTSU.length > 0) { // 太陽
-    //alert('太陽');
+    // console.log('太陽');
     $('.inbg').removeClass('none');
     $('.inbg1').addClass('inbgani1');
     setTimeout(function () {
@@ -1133,7 +1136,7 @@ function clickPosition(event) {
 
 //web Speech API
 let recognition = new webkitSpeechRecognition();
-recognition.lang = "ja-JP";
+recognition.lang = "ja-JP"; // 言語設定
 
 recognition.addEventListener('result', function (e) {
   let speechtext = e.results[0][0].transcript;
@@ -1153,7 +1156,7 @@ recognition.addEventListener('result', function (e) {
       setTimeout(function () {
         location.href = '../html/sun.html';
       }, 410);
-      //alert(e.results[0][0].transcript);
+      // console.log(e.results[0][0].transcript);
       break;
     case '彗星':
       $('.inbg').removeClass('none');
@@ -1170,7 +1173,7 @@ recognition.addEventListener('result', function (e) {
       setTimeout(function () {
         location.href = '../html/mercury.html';
       }, 410);
-      //alert(e.results[0][0].transcript);
+      // console.log(e.results[0][0].transcript);
       break;
     case 'きんせい':
       $('.inbg').removeClass('none');
@@ -1187,7 +1190,7 @@ recognition.addEventListener('result', function (e) {
       setTimeout(function () {
         location.href = '../html/venus.html';
       }, 410);
-      //alert(e.results[0][0].transcript);
+      // console.log(e.results[0][0].transcript);
       break;
     case '地球':
       $('.inbg').removeClass('none');
@@ -1204,7 +1207,7 @@ recognition.addEventListener('result', function (e) {
       setTimeout(function () {
         location.href = '../php/earth.php';
       }, 410);
-      //alert(e.results[0][0].transcript);
+      // console.log(e.results[0][0].transcript);
       break;
     case '月':
       $('.inbg').removeClass('none');
@@ -1221,7 +1224,7 @@ recognition.addEventListener('result', function (e) {
       setTimeout(function () {
         location.href = '../html/moon.html';
       }, 410);
-      //alert(e.results[0][0].transcript);
+      // console.log(e.results[0][0].transcript);
       break;
     case '火星':
       $('.inbg').removeClass('none');
@@ -1238,7 +1241,7 @@ recognition.addEventListener('result', function (e) {
       setTimeout(function () {
         location.href = '../html/mars.html';
       }, 410);
-      //alert(e.results[0][0].transcript);
+      // console.log(e.results[0][0].transcript);
       break;
     case '木星':
       $('.inbg').removeClass('none');
@@ -1255,7 +1258,7 @@ recognition.addEventListener('result', function (e) {
       setTimeout(function () {
         location.href = '../html/jupiter.html';
       }, 410);
-      //alert(e.results[0][0].transcript);
+      // console.log(e.results[0][0].transcript);
       break;
     case '土星':
       $('.inbg').removeClass('none');
@@ -1272,7 +1275,7 @@ recognition.addEventListener('result', function (e) {
       setTimeout(function () {
         location.href = '../html/saturn.html';
       }, 410);
-      //alert(e.results[0][0].transcript);
+      // console.log(e.results[0][0].transcript);
       break;
     case '天王星':
       $('.inbg').removeClass('none');
@@ -1289,7 +1292,7 @@ recognition.addEventListener('result', function (e) {
       setTimeout(function () {
         location.href = '../html/uranus.html';
       }, 410);
-      //alert(e.results[0][0].transcript);
+      // console.log(e.results[0][0].transcript);
       break;
     case '海王星':
       $('.inbg').removeClass('none');
@@ -1306,7 +1309,7 @@ recognition.addEventListener('result', function (e) {
       setTimeout(function () {
         location.href = '../html/neptune.html';
       }, 410);
-      //alert(e.results[0][0].transcript);
+      // console.log(e.results[0][0].transcript);
       break;
     default: // その他
       //alert(e.results[0][0].transcript);
@@ -1316,6 +1319,7 @@ recognition.addEventListener('result', function (e) {
       $('.micWrap').addClass('micOut');
       $('.masc').addClass('none');
       clearTimeout(speechtime);
+      // console.log(e.results[0][0].transcript);
       break;
   }
 });
@@ -1394,7 +1398,7 @@ function Keydown(event) {
   if ($('#stage').hasClass('plamouse')) {
     // 惑星分岐
     if (keyCode == 49 || keyCode == 97) { // 太陽
-      //alert('太陽');
+      // console.log("太陽");
       $('.inbg').removeClass('none');
       $('.inbg1').addClass('inbgani1');
       setTimeout(function () {
@@ -1624,7 +1628,7 @@ $('.micWrap').addedClass('micIn', function () {
   }
 });
 
-// 現在の時間
+// 監視
 let timerID = setInterval('clock()', 500);
 
 function clock() {
@@ -1632,6 +1636,7 @@ function clock() {
   document.getElementById("today").innerHTML = getToday();
 };
 
+// 時間
 function getNow() {
   let now = new Date();
   let hour = now.getHours();
@@ -1648,6 +1653,7 @@ function getNow() {
   return totime;
 };
 
+// 日付
 function getToday() {
   let now = new Date();
   let mon = now.getMonth() + 1;
@@ -1666,6 +1672,7 @@ function getToday() {
   return today;
 };
 
+// audioManager
 manager = (new AudioManager({
   useMicrophone: true,
   onEnterFrame: function () {
