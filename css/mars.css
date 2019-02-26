@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import "./ress.min.css";
+@import "./planet.css";
+
+.text {
+  color: #f00;
+}
+
+#info {
+  border: solid .5vw #b00;
+}
+
+.pnBtn {
+  background: #b00;
+}
+
+.pnBtn:hover {
+  box-shadow: 0 0 2.5vw #b00;
+}
+
+#marsimg1 img {
+  margin-left: 1vw;
+  width: 24vw;
+  float: right;
+}
+
+#marsimg2 img {
+  margin-left: 1vw;
+  width: 23vw;
+  float: right;
+}
+
+#marsimg3 img {
+  margin-top: .5vh;
+  margin-right: 1vw;
+  width: 22vw;
+  float: left;
+}
+
+.loadingani1,
+.loadingani2,
+.loadingani3 {
+  transform-origin: bottom right;
+}
+
+.loadingbg {
+  bottom: 0;
+  right: 0;
+  transform: rotate(-90deg);
+}
+
+@keyframes loadingbg {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
+}

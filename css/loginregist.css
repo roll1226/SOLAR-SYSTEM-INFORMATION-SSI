@@ -1,0 +1,124 @@
+@charset "utf-8";
+@import "./ress.min.css";
+@import "./bg.css";
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  background: #000;
+  flood-color: #fff;
+  cursor: default;
+}
+
+header {
+  margin-top: 9vh;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1 img {
+  width: 20vw;
+}
+
+main {
+  opacity: 0;
+}
+
+table {
+  margin: 0 auto;
+  width: 20vw;
+}
+
+input {
+  outline: none;
+}
+
+#user,
+#passwd,
+#name {
+  cursor: text;
+}
+
+#login,
+#singup {
+  cursor: pointer;
+}
+
+#user {
+  margin-top: 3vh;
+}
+
+#user,
+#passwd,
+#name {
+  margin-bottom: 4vh;
+  padding: .8vw .3vw;
+  width: 20vw;
+  border: solid .4vh #fff;
+  border-radius: .2vw;
+  color: #fff;
+  font-size: 1.3vw;
+}
+
+#name {
+  margin-bottom: 8vh;
+}
+
+.passMa #passwd {
+  margin-bottom: 8vh;
+}
+
+#login,
+#regist,
+#signup {
+  padding: .5vw;
+  width: 100%;
+  border: solid .1vw #fff;
+  border-radius: .2vw;
+  color: #fff;
+  font-weight: bold;
+  transition: all 700ms;
+}
+
+#signup {
+  margin: 0 auto;
+  display: block;
+  width: 20vw;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  border: solid .1vw #0ff;
+}
+
+#login:hover {
+  background: #fff;
+  color: #000;
+}
+
+#or {
+  padding: .8vw;
+  color: #fff;
+  text-align: center;
+}
+
+#signup:hover {
+  background: #0ff;
+  color: #000;
+}
+
+#error {
+  color: #f00;
+  text-align: center;
+  font-size: 1.4vw;
+}
+
+header,
+main {
+  position: relative;
+  z-index: 30;
+}

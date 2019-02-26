@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>月/MOON</title>
+  <link rel="stylesheet" href="../css/moon.css">
+</head>
+
+<body>
+  <!-- ページ遷移 -->
+  <div class="planetloadWrap">
+    <div class="loadingWrap">
+      <div class="loadingtext">
+        <p class="text text1">お</p>
+      </div>
+      <div class="loadingtext">
+        <p class="text text2">月</p>
+      </div>
+      <div class="loadingtext">
+        <p class="text text3">様</p>
+      </div>
+    </div>
+  </div>
+  <div class="loadingbg loadingbg1"></div>
+  <div class="loadingbg loadingbg2"></div>
+  <div class="loadingbg loadingbg3"></div>
+
+  <!-- BACK -->
+  <form action="../php/ssi.php" method="POST">
+    <input type="submit" value="BACK" id="back" name="backcnt">
+  </form>
+
+  <!-- 描画 -->
+  <canvas id="stage"></canvas>
+  <!-- 説明 -->
+  <div id="info">
+    <header>
+      <h1>月/MOON</h1>
+    </header>
+    <main class="main">
+      <!-- 1ページ目 -->
+      <div class="infotext1">
+        <div class="title">
+          <h2>月の特徴</h2>
+        </div>
+        <p id="moonimg1"><img src="../images/pattern.jpg" alt="模様">月は地球の衛星。このことから地球の兄弟星とも呼ばれている。空気や水はなく、昼と夜の温度差がはげしい。月は地球より小さいので、もちろん重力も小さく、地球の約6分の1になる。<br>月の模様でうさぎがオモチをついているように見えますが、世界中ではカニ、本を読む女性、ライオンなどにみ見えている。</p>
+        <div class="clear"></div>
+        <div class="title">
+          <h2>月の誕生</h2>
+          <p>月の誕生には様々な説がある。原子惑星系円盤中の塵が集まりかたまって地球とともにできた「兄弟説」、地球の自転が現在よりも速かったころ、赤道部分がちぎれて飛び出した「親子説」、地球の近くにきた天体が、地球の引力につかまり月となった「他人説」、地球ができたころに、他の惑星が衝突し、惑星と地球の破片から月が生まれた「ジャイアントインパクト説（巨大衝突説）」など様々な仮説がある。現在はジャイアントインパクト説が有力である。</p>
+        </div>
+      </div>
+      <!-- 2ページ目 -->
+      <div class="infotext2 none">
+        <div class="title">
+          <h2>月探査計画「かぐや」</h2>
+        </div>
+        <p>日本が2007年9月に打ち上げた月周回衛星「かぐや」は、1960年代後半から70年代前半にかけてアメリカが行ったアポロ計画以来の、最大規模の月の探査計画である。この計画の主な目的は、月の起源と進化の解明のための科学データを取得することと、月周回軌道への投入や軌道姿勢制御技術の実証を行うこと。</p>
+        <p id="moonimg2"><img src="../images/kaguya.jpg" alt="かぐや">「かぐや」は月のまわりを周回しながら15種類の装置を使って月を探査し、月表面の元素組成、鉱物組成、地形、表面付近の地下構造、磁気異常、重力場の観測を全域に行う。これらの観測によって、総合的に月の起源・進化の解明に迫ると期待されており、月の全球地図を作成したり高度データを取得したりしたほか、表と裏で重力場に違いがあることや地下構造に層状構造があること、月の裏側の一部では従来考えられていたよりも最近までマグマ活動があったことなどがわかった。</p>
+      </div>
+
+      <!-- prev,nextボタン -->
+      <div id="arrow">
+        <button class="pnBtn prev none">
+          <img src="../images/arrowprev.png" alt="戻る">
+        </button>
+        <button class="pnBtn next">
+          <img src="../images/arrownext.png" alt="進む">
+        </button>
+      </div>
+    </main>
+  </div>
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/three.min.js"></script>
+  <script src="../js/orbitcontrols.js"></script>
+  <script src="../js/planet.js"></script>
+  <script src="../js/moon.js"></script>
+</body>
+
+</html>

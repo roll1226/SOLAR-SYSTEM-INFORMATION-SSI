@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+header img {
+  cursor: pointer;
+}
+
+main {
+  opacity: 0;
+}
+
+#user,
+#passwd,
+#name {
+  border: solid .4vh #0ff;
+  color: #0ff;
+}
+
+#regist {
+  border: solid .1vw #0ff;
+}
+
+#regist:hover {
+  background: #0ff;
+  color: #000;
+}

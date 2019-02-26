@@ -1,0 +1,62 @@
+@charset "utf-8";
+@import "./ress.min.css";
+@import "./planet.css";
+
+.text {
+  color: #0af;
+}
+
+#info {
+  border: solid .5vw #07b;
+}
+
+.pnBtn {
+  background: #07b;
+}
+
+.pnBtn:hover {
+  box-shadow: 0 0 2.5vw #07b;
+}
+
+#neptuneimg1 img {
+  margin-left: 1vw;
+  width: 24vw;
+  float: right;
+}
+
+#neptuneimg2 img {
+  margin-top: .5vh;
+  margin-left: 1vw;
+  width: 17vw;
+  float: right;
+}
+
+.loadingWrap {
+  height: 92vw;
+}
+
+.text {
+  margin-top: -5vw;
+}
+
+.loadingani1,
+.loadingani2,
+.loadingani3 {
+  transform-origin: bottom left;
+}
+
+.loadingbg {
+  bottom: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+@keyframes loadingbg {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>太陽/SUN</title>
+  <link rel="stylesheet" href="../css/sun.css">
+</head>
+
+<body>
+  <!-- ページ遷移 -->
+  <div class="planetloadWrap">
+    <div class="loadingWrap">
+      <div class="loadingtext">
+        <p class="text text1">太</p>
+      </div>
+      <div class="loadingtext">
+        <p class="text text3">陽</p>
+      </div>
+    </div>
+  </div>
+  <div class="loadingbg loadingbg1"></div>
+  <div class="loadingbg loadingbg2"></div>
+  <div class="loadingbg loadingbg3"></div>
+
+  <!-- BACK -->
+  <form action="../php/ssi.php" method="POST">
+    <input type="submit" value="BACK" id="back" name="backcnt">
+  </form>
+
+  <!-- 描画 -->
+  <canvas id="stage"></canvas>
+  <!-- 説明 -->
+  <div id="info">
+    <header>
+      <h1>太陽/SUN</h1>
+    </header>
+    <main class="main">
+      <!-- １ページ目 -->
+      <div class="infotext1">
+        <div class="title">
+          <h2>太陽の特徴</h2>
+        </div>
+        <p id="sunimg1">太陽は自ら光を放出する巨大な恒星である。<img src="../images/suninfo.gif" alt="太陽情報">太陽系全体の質量の99.86%を占めている。膨大な占有率で他の惑星は太陽からのエネルギーを受け取り、影響をを受け、重力によって引くつけられている。<br>太陽の大気はほとんど水素である。太陽の中心は、1500万℃もの高温になっている。表面の温度は中心より低いが6000℃もある。</p>
+        <div class="clear"></div>
+        <p id="sunimg2"><img src="../images/purominens.jpg" alt="プロミネンス">太陽内部からのエネルギーの流れが磁場でとめられて、温度が下がった所が黒く見える。これを黒点といい、1609年にガリレオ・ガリレイによって発見された。太陽の表面のすぐ外側にある大気はという1万℃ある「彩層」がある。彩層から吹き上がるプロミネンスを観測することもできす。</p>
+        <div class="clear"></div>
+      </div>
+      <!-- 2ページ目 -->
+      <div class="infotext2 none">
+        <div class="title">
+          <h2>太陽の日食</h2>
+        </div>
+        <p id="sunimg3"><img src="../images/nisuoku.jpg" alt="日食">日食は月が太陽を覆って起こる。部分日食は、月が太陽の真上を通らないので、太陽が全て隠れず、三日月状になる日食のことである。金環日食は月から太陽が少しはみ出して細い指輪のように見える。</p>
+        <div class="clear"></div>
+        <p>皆既日食は太陽が月に丁度隠れる日食である。太陽にコロナが光って見れる。日本で見れる日食は2019年1月6日になる。</p>
+
+        <div class="title">
+          <h2>赤色巨星</h2>
+        </div>
+        <p>星の中心部で、水素が燃えた後に出るヘリウムが溜まり星が膨張、大きくなる。その後、大きくなった分温度が下がり、赤く輝いき出す。これを赤色巨星という。<br>太陽は50億年水素を燃やし続けて、その後ガスを放出し、赤色巨星となる。</p>
+      </div>
+
+      <!-- prev,nextボタン -->
+      <div id="arrow">
+        <button class="pnBtn prev none">
+          <img src="../images/arrowprev.png" alt="戻る">
+        </button>
+        <button class="pnBtn next">
+          <img src="../images/arrownext.png" alt="進む">
+        </button>
+      </div>
+    </main>
+  </div>
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/three.min.js"></script>
+  <script src="../js/orbitcontrols.js"></script>
+  <script src="../js/planet.js"></script>
+  <script src="../js/sun.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>

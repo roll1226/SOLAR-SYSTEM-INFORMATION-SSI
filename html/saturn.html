@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>土星/SATURN</title>
+  <link rel="stylesheet" href="../css/saturn.css">
+</head>
+
+<body>
+  <!-- ページ遷移 -->
+  <div class="planetloadWrap">
+    <div class="loadingWrap">
+      <div class="loadingtext">
+        <p class="text text1">土</p>
+      </div>
+      <div class="loadingtext">
+        <p class="text text3">星</p>
+      </div>
+    </div>
+  </div>
+  <div class="loadingbg loadingbg1"></div>
+  <div class="loadingbg loadingbg2"></div>
+  <div class="loadingbg loadingbg3"></div>
+
+  <!-- BACK -->
+  <form action="../php/ssi.php" method="POST">
+    <input type="submit" value="BACK" id="back" name="backcnt">
+  </form>
+
+  <!-- 描画 -->
+  <canvas id="stage"></canvas>
+  <!-- 説明 -->
+  <div id="info">
+    <header>
+      <h1>土星/SATURN</h1>
+    </header>
+    <main class="main">
+      <!-- 1ページ目 -->
+      <div class="infotext1">
+        <div class="title">
+          <h2>土星の特徴</h2>
+        </div>
+        <p id="saturnimg1"><img src="../images/saturninfo.gif" alt="土星情報">土星は木星型惑星と呼ばれる、ガスの惑星。太陽系では木星の次に大きい惑星で、地球の9倍もある。ですが、土星の平均密度は水の0.7倍なので土星を浮かべられるほど大きなプールがあったとしたら、土星は　水に浮いてしまう。<br>土星の大気は水素96％、ヘリウム3％、メタン0.0045％、アンモニア0.0001％となっています。木星に似ている。</p>
+        <div class="title">
+          <h2>巨大な環</h2>
+        </div>
+        <p>円盤のように見える土星の環は、たくさんの細い環が集まったものである。最初に発見したのは、ガリレオ・ガリレイですが、彼は環とは認識できなかった。正しい形が明らかにされたのは1655年、オランダの天文学者クリスチャン・ホイヘンスによってでした。その環は、岩石や氷のつぶの集まり。粒の大きさは数mmから数m。表面は水やアンモニアの氷で覆われている。</p>
+      </div>
+      <!-- 2ページ目 -->
+      <div class="infotext2 none">
+        <p id="saturnimg2"><img src="../images/saturnring.jpg" alt="土星の環">1675年にはフランスの天文学者ジョバンニ・カッシーニが、土星の環は複数の細い環からできていて、隙間が開いている部分があることを発見した。最も幅が広い隙間は「カッシーニの間隙」と呼ばれている。<br>土星の環がどのようにしてできたのかは明らかになっていませんが、土星の衛星や捕獲した彗星などが土星に近づきすぎて、潮汐力によってこなごなになったものと考えられている。「スポーク」と呼ばれる暗い模様が見られますが、なぜこのような模様が生じているのか、分かっていない。</p>
+        <div class="title">
+          <h2>消える環</h2>
+        </div>
+        <p>土星の環は、地球の公転軌道面に対して約26度傾いている。そのため、土星の公転につれて、地球から見える環の傾きが変わる。そして、環はその厚さが最大でも数百mしかないため、真横から見ると地球からは見えなくなってしまう。環の消失は約15年ごとに起こる。</p>
+      </div>
+
+      <!-- prev,nextボタン -->
+      <div id="arrow">
+        <button class="pnBtn prev none">
+          <img src="../images/arrowprev.png" alt="戻る">
+        </button>
+        <button class="pnBtn next">
+          <img src="../images/arrownext.png" alt="進む">
+        </button>
+      </div>
+    </main>
+  </div>
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/three.min.js"></script>
+  <script src="../js/orbitcontrols.js"></script>
+  <script src="../js/planet.js"></script>
+  <script src="../js/saturn.js"></script>
+</body>
+
+</html>
