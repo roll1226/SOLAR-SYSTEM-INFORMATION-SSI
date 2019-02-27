@@ -1,6 +1,6 @@
 # SOLAR-SYSTEM-INFORMATION-SSI
 HAL EVENT WEEK 1年次作成<br>
-Three.jsを使用してWEB上で太陽系を作り出す。(chrome上で動かしてください。)
+Three.jsを使用してWEB上で太陽系を作り出す。(chrome上で動かしてください)
 
 ##　使用言語
 * HTML
@@ -16,7 +16,8 @@ git clone https://github.com/roll1226/SOLAR-SYSTEM-INFORMATION-SSI.git
 
 ## 使用方法
 マウスでカメラの角度を変えたり、惑星をクリックして各惑星の詳細を画像付きで説明してくれる。<br>
-Web Speech APIはインターネットが繋がってる状態で使用してください。
+Web Speech APIはインターネットが繋がってる状態で使用してください。<br>
+※こちらはログイン機能を除去して名前をゲストに固定したバージョンです。
 
 ## 参考ページ
 [ICS MEDIA Three.js入門](https://ics.media/tutorial-three/index.html)<br>
