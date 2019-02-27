@@ -1,6 +1,7 @@
 # SOLAR-SYSTEM-INFORMATION-SSI
 HAL EVENT WEEK 1年次作成<br>
-Three.jsを使用してWEB上で太陽系を作り出す。(chrome上で動かしてください)
+Three.jsを使用してWEB上で太陽系を作り出す。(chrome上で動かしてください)<br>
+<img width="600" alt="2019-02-26 22 32 32" src="https://user-images.githubusercontent.com/47688057/53486883-588f3e00-3acd-11e9-9ef7-c7a2a994602e.png">
 
 ## 使用言語
 * HTML
