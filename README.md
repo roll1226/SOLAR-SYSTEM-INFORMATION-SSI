@@ -2,7 +2,7 @@
 HAL EVENT WEEK 1年次作成<br>
 Three.jsを使用してWEB上で太陽系を作り出す。(chrome上で動かしてください)
 
-##　使用言語
+## 使用言語
 * HTML
 * CSS
 * JavaScript
