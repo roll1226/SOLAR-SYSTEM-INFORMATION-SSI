@@ -354,59 +354,59 @@ let manager;
 // テクスチャーリスト
 let manifest = [{
     id: 'sun',
-    src: '../images/sun.jpg'
+    src: './images/sun.jpg'
   }, // 太陽
   {
     id: 'mercury',
-    src: '../images/mercury.jpg'
+    src: './images/mercury.jpg'
   }, // 水星
   {
     id: 'venus',
-    src: '../images/venus.jpg'
+    src: './images/venus.jpg'
   }, // 金星
   {
     id: 'earth',
-    src: '../images/earth.jpg'
+    src: './images/earth.jpg'
   }, // 地球
   {
     id: 'crowd',
-    src: '../images/crowd.png'
+    src: './images/crowd.png'
   }, // 雲
   {
     id: 'mars',
-    src: '../images/mars.jpg'
+    src: './images/mars.jpg'
   }, // 火星
   {
     id: 'jupiter',
-    src: '../images/jupiter.jpg'
+    src: './images/jupiter.jpg'
   }, // 木星
   {
     id: 'saturn',
-    src: '../images/saturn.jpg'
+    src: './images/saturn.jpg'
   }, // 土星
   {
     id: 'saturn-ring',
-    src: '../images/saturn-ring.jpg'
+    src: './images/saturn-ring.jpg'
   }, // 土星の輪
   {
     id: 'uranus',
-    src: '../images/uranus.jpg'
+    src: './images/uranus.jpg'
   }, // 天王星
   {
     id: 'uranus-ring',
-    src: '../images/uranus-ring.jpg'
+    src: './images/uranus-ring.jpg'
   }, // 天王星の輪
   {
     id: 'neptune',
-    src: '../images/neptune.jpg'
+    src: './images/neptune.jpg'
   }, // 海王星
   {
     id: 'universe',
-    src: '../images/space.jpg'
+    src: './images/space.jpg'
   }, // 宇宙空間
   {
     id: 'moon',
-    src: '../images/moon.jpg'
+    src: './images/moon.jpg'
   } //月
 ];
 
@@ -867,70 +867,70 @@ class text {
 }
 
 // 太陽テキスト
-sunimageText = new text('../images/suntext.png');
+sunimageText = new text('./images/suntext.png');
 sunText = new THREE.Sprite(sunimageText.TextImg);
 sunText.position.y = 64;
 sunText.scale.set(50, 35, 50);
 targetTextSun.push(sunText);
 
 // 水星テキスト
-mercuryimageText = new text('../images/mercurytext.png');
+mercuryimageText = new text('./images/mercurytext.png');
 mercuryText = new THREE.Sprite(mercuryimageText.TextImg);
 mercuryText.position.y = 15;
 mercuryText.scale.set(40, 27, 40);
 targetTextMercury.push(mercuryText);
 
 // 金星テキスト
-venusimageText = new text('../images/venustext.png');
+venusimageText = new text('./images/venustext.png');
 venusText = new THREE.Sprite(venusimageText.TextImg);
 venusText.position.y = 20;
 venusText.scale.set(40, 27, 40);
 targetTextVenus.push(venusText);
 
 // 地球テキスト
-earthimageText = new text('../images/earthtext.png');
+earthimageText = new text('./images/earthtext.png');
 earthText = new THREE.Sprite(earthimageText.TextImg);
 earthText.position.y = 25;
 earthText.scale.set(40, 27, 40);
 targetTextEarth.push(earthText);
 
 // 月テキスト
-moonimageText = new text('../images/moontext.png');
+moonimageText = new text('./images/moontext.png');
 moonText = new THREE.Sprite(moonimageText.TextImg);
 moonText.position.y = 16;
 moonText.scale.set(17, 17, 17);
 targetTextMoon.push(moonText);
 
 // 火星テキスト
-marsimageText = new text('../images/marstext.png');
+marsimageText = new text('./images/marstext.png');
 marsText = new THREE.Sprite(marsimageText.TextImg);
 marsText.position.y = 19;
 marsText.scale.set(40, 27, 40);
 targetTextMars.push(marsText);
 
 // 木星テキスト
-jupiterimageText = new text('../images/jupitertext.png');
+jupiterimageText = new text('./images/jupitertext.png');
 jupiterText = new THREE.Sprite(jupiterimageText.TextImg);
 jupiterText.position.y = 53;
 jupiterText.scale.set(40, 27, 40);
 targetTextJupiter.push(jupiterText);
 
 // 土星テキスト
-saturnimageText = new text('../images/saturntext.png');
+saturnimageText = new text('./images/saturntext.png');
 saturnText = new THREE.Sprite(saturnimageText.TextImg);
 saturnText.position.y = 25;
 saturnText.scale.set(40, 27, 40);
 targetTextSaturn.push(saturnText);
 
 // 天王星テキスト
-uranusimageText = new text('../images/uranustext.png');
+uranusimageText = new text('./images/uranustext.png');
 uranusText = new THREE.Sprite(uranusimageText.TextImg);
 uranusText.position.y = 25;
 uranusText.scale.set(50, 20, 40);
 targetTextUranus.push(uranusText);
 
 // 海王星テキスト
-neptuneimageText = new text('../images/neptunetext.png');
+neptuneimageText = new text('./images/neptunetext.png');
 neptuneText = new THREE.Sprite(neptuneimageText.TextImg);
 neptuneText.position.y = 27;
 neptuneText.scale.set(50, 20, 40);
@@ -994,7 +994,7 @@ function clickPosition(event) {
       }, 100);
     }, 100);
     setTimeout(function () {
-      location.href = '../html/sun.html';
+      location.href = './html/sun.html';
     }, 410);
   } else if (interMe.length > 0 || interTME.length > 0) { // 水星
     $('.inbg').removeClass('none');
@@ -1009,7 +1009,7 @@ function clickPosition(event) {
       }, 100);
     }, 100);
     setTimeout(function () {
-      location.href = '../html/mercury.html';
+      location.href = './html/mercury.html';
     }, 410);
   } else if (interVe.length > 0 || interTV.length > 0) { // 金星
     $('.inbg').removeClass('none');
@@ -1024,7 +1024,7 @@ function clickPosition(event) {
       }, 100);
     }, 100);
     setTimeout(function () {
-      location.href = '../html/venus.html';
+      location.href = './html/venus.html';
     }, 410);
   } else if (interEa.length > 0 || interTE.length > 0) { // 地球
     $('.inbg').removeClass('none');
@@ -1039,7 +1039,7 @@ function clickPosition(event) {
       }, 100);
     }, 100);
     setTimeout(function () {
-      location.href = '../php/earth.php';
+      location.href = './html/earth.html';
     }, 410);
   } else if (interMa.length > 0 || interTMA.length > 0) { // 火星
     $('.inbg').removeClass('none');
@@ -1054,7 +1054,7 @@ function clickPosition(event) {
       }, 100);
     }, 100);
     setTimeout(function () {
-      location.href = '../html/mars.html';
+      location.href = './html/mars.html';
     }, 410);
   } else if (interJu.length > 0 || interTJ.length > 0) { // 木星
     $('.inbg').removeClass('none');
@@ -1069,7 +1069,7 @@ function clickPosition(event) {
       }, 100);
     }, 100);
     setTimeout(function () {
-      location.href = '../html/jupiter.html';
+      location.href = './html/jupiter.html';
     }, 410);
   } else if (interSa.length > 0 || interTSA.length > 0) { // 土星
     $('.inbg').removeClass('none');
@@ -1084,7 +1084,7 @@ function clickPosition(event) {
       }, 100);
     }, 100);
     setTimeout(function () {
-      location.href = '../html/saturn.html';
+      location.href = './html/saturn.html';
     }, 410);
   } else if (interUr.length > 0 || interTU.length > 0) { // 天王星
     $('.inbg').removeClass('none');
@@ -1099,7 +1099,7 @@ function clickPosition(event) {
       }, 100);
     }, 100);
     setTimeout(function () {
-      location.href = '../html/uranus.html';
+      location.href = './html/uranus.html';
     }, 410);
   } else if (interNe.length > 0 || interTN.length > 0) { // 海王星
     $('.inbg').removeClass('none');
@@ -1114,7 +1114,7 @@ function clickPosition(event) {
       }, 100);
     }, 100);
     setTimeout(function () {
-      location.href = '../html/neptune.html';
+      location.href = './html/neptune.html';
     }, 410);
   } else if (interMo.length > 0 || interTMO.length > 0) { // 月
     $('.inbg').removeClass('none');
@@ -1129,7 +1129,7 @@ function clickPosition(event) {
       }, 100);
     }, 100);
     setTimeout(function () {
-      location.href = '../html/moon.html';
+      location.href = './html/moon.html';
     }, 410);
   }
 };
@@ -1154,7 +1154,7 @@ recognition.addEventListener('result', function (e) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/sun.html';
+        location.href = './html/sun.html';
       }, 410);
       // console.log(e.results[0][0].transcript);
       break;
@@ -1171,7 +1171,7 @@ recognition.addEventListener('result', function (e) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/mercury.html';
+        location.href = './html/mercury.html';
       }, 410);
       // console.log(e.results[0][0].transcript);
       break;
@@ -1188,7 +1188,7 @@ recognition.addEventListener('result', function (e) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/venus.html';
+        location.href = './html/venus.html';
       }, 410);
       // console.log(e.results[0][0].transcript);
       break;
@@ -1205,7 +1205,7 @@ recognition.addEventListener('result', function (e) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../php/earth.php';
+        location.href = './html/earth.html';
       }, 410);
       // console.log(e.results[0][0].transcript);
       break;
@@ -1222,7 +1222,7 @@ recognition.addEventListener('result', function (e) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/moon.html';
+        location.href = './html/moon.html';
       }, 410);
       // console.log(e.results[0][0].transcript);
       break;
@@ -1239,7 +1239,7 @@ recognition.addEventListener('result', function (e) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/mars.html';
+        location.href = './html/mars.html';
       }, 410);
       // console.log(e.results[0][0].transcript);
       break;
@@ -1256,7 +1256,7 @@ recognition.addEventListener('result', function (e) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/jupiter.html';
+        location.href = './html/jupiter.html';
       }, 410);
       // console.log(e.results[0][0].transcript);
       break;
@@ -1273,7 +1273,7 @@ recognition.addEventListener('result', function (e) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/saturn.html';
+        location.href = './html/saturn.html';
       }, 410);
       // console.log(e.results[0][0].transcript);
       break;
@@ -1290,7 +1290,7 @@ recognition.addEventListener('result', function (e) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/uranus.html';
+        location.href = './html/uranus.html';
       }, 410);
       // console.log(e.results[0][0].transcript);
       break;
@@ -1307,7 +1307,7 @@ recognition.addEventListener('result', function (e) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/neptune.html';
+        location.href = './html/neptune.html';
       }, 410);
       // console.log(e.results[0][0].transcript);
       break;
@@ -1411,7 +1411,7 @@ function Keydown(event) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/sun.html';
+        location.href = './html/sun.html';
       }, 410);
     } else if (keyCode == 50 || keyCode == 98) { // 水星
       $('.inbg').removeClass('none');
@@ -1426,7 +1426,7 @@ function Keydown(event) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/mercury.html';
+        location.href = './html/mercury.html';
       }, 410);
     } else if (keyCode == 51 || keyCode == 99) { // 金星
       $('.inbg').removeClass('none');
@@ -1441,7 +1441,7 @@ function Keydown(event) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/venus.html';
+        location.href = './html/venus.html';
       }, 410);
     } else if (keyCode == 52 || keyCode == 100) { // 地球
       $('.inbg').removeClass('none');
@@ -1456,7 +1456,7 @@ function Keydown(event) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../php/earth.php';
+        location.href = './html/earth.html';
       }, 410);
     } else if (keyCode == 53 || keyCode == 101) { // 月
       $('.inbg').removeClass('none');
@@ -1471,7 +1471,7 @@ function Keydown(event) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/moon.html';
+        location.href = './html/moon.html';
       }, 410);
     } else if (keyCode == 54 || keyCode == 102) { // 金星
       $('.inbg').removeClass('none');
@@ -1486,7 +1486,7 @@ function Keydown(event) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/mars.html';
+        location.href = './html/mars.html';
       }, 410);
     } else if (keyCode == 55 || keyCode == 103) { // 木星
       $('.inbg').removeClass('none');
@@ -1501,7 +1501,7 @@ function Keydown(event) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/jupiter.html';
+        location.href = './html/jupiter.html';
       }, 410);
     } else if (keyCode == 56 || keyCode == 104) { // 土星
       $('.inbg').removeClass('none');
@@ -1516,7 +1516,7 @@ function Keydown(event) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/saturn.html';
+        location.href = './html/saturn.html';
       }, 410);
     } else if (keyCode == 57 || keyCode == 105) { // 天王星
       $('.inbg').removeClass('none');
@@ -1531,7 +1531,7 @@ function Keydown(event) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/uranus.html';
+        location.href = './html/uranus.html';
       }, 410);
     } else if (keyCode == 48 || keyCode == 96) { // 海王星
       $('.inbg').removeClass('none');
@@ -1546,7 +1546,7 @@ function Keydown(event) {
         }, 100);
       }, 100);
       setTimeout(function () {
-        location.href = '../html/neptune.html';
+        location.href = './html/neptune.html';
       }, 410);
     }
 

@@ -189,10 +189,10 @@ button {
   position: relative;
   margin: 0 auto;
   width: 80%;
-  bottom: -30vh;
+  bottom: -15vh;
 }
 
-#logout input {
+/* #logout input {
   padding: .5vw .8vw;
   width: 100%;
   border: solid .1vw #000;
@@ -206,8 +206,13 @@ button {
 #logout input:hover {
   background: #000;
   color: #fff;
-}
+} */
 
+#logout img {
+  background: #000;
+  border-radius: 10%;
+  width: 100%;
+}
 
 #user {
   margin: 13vh auto 0;

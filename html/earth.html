@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -25,7 +24,7 @@
   <div class="loadingbg loadingbg3"></div>
 
   <!-- BACK -->
-  <form action="./ssi.php" method="POST">
+  <form action="../index.php" method="POST">
     <input type="submit" value="BACK" id="back" name="backcnt">
   </form>
 
@@ -42,7 +41,8 @@
         <div class="title">
           <h2>地球の特徴</h2>
         </div>
-        <p id="earthimg1"><img src="../images/earthinfo.gif" alt="地球情報"><?php echo $_SESSION["NAME"]; ?>さんが生活している惑星。地球は約46億年前に誕生いたと考えられている。最初は宇宙のガスやちりが集まっただけで、大気はなかった。徐々に水ができて生命が生まれ、今の地球のように酸素ができた。地球の表面の7割は水がしめている。太陽系の惑星の中で生命が存在しているのは地球だけである。</p>
+        <!-- 名前をゲストに -->
+        <p id="earthimg1"><img src="../images/earthinfo.gif" alt="地球情報">ゲストさんが生活している惑星。地球は約46億年前に誕生いたと考えられている。最初は宇宙のガスやちりが集まっただけで、大気はなかった。徐々に水ができて生命が生まれ、今の地球のように酸素ができた。地球の表面の7割は水がしめている。太陽系の惑星の中で生命が存在しているのは地球だけである。</p>
         <div class="clear"></div>
         <div class="title">
           <h2>生命の誕生</h2>
