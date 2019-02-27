@@ -68,7 +68,7 @@
           <ul>
             <li><img src="./images/user_off.png" alt="ユーザーボタン">アカウント管理が出来る。<br>Aキーでも可能。</li>
             <div class="clear"></div>
-            <li><img src="./images/stop_off.png" alt="ストップボタン">惑星の動きを制御出来る。(2段階)<br>Sキーでも可能。</li>
+            <li><img src="./images/stop_off.png" alt="ストップボタン">惑星の動きを制御出来る。(3段階)<br>Sキーでも可能。</li>
             <div class="clear"></div>
           </ul>
         </div>
