@@ -9,70 +9,55 @@
 
 <body>
   <!-- ページ遷移 -->
-  <div class="planetloadWrap">
+  <div id="planetloadWrap">
     <div class="loadingWrap">
-      <div class="loadingtext">
-        <p class="text text1">海</p>
-      </div>
-      <div class="loadingtext">
-        <p class="text text2">王</p>
-      </div>
-      <div class="loadingtext">
-        <p class="text text3">星</p>
-      </div>
+      <div class="loadingtext" v-for="planet in neptune" v-html="planet.text"></div>
     </div>
   </div>
-  <div class="loadingbg loadingbg1"></div>
-  <div class="loadingbg loadingbg2"></div>
-  <div class="loadingbg loadingbg3"></div>
+  <div id="loadingBGWrap">
+    <div v-for="loadingbg in bgs" v-html="loadingbg.bg"></div>
+  </div>
 
   <!-- BACK -->
-  <form action="../index.php" method="POST">
-    <input type="submit" value="BACK" id="back" name="backcnt">
-  </form>
+  <div id="backBtn" v-html="back"></div>
 
   <!-- 描画 -->
   <canvas id="stage"></canvas>
   <!-- 説明 -->
   <div id="info">
-    <header>
-      <h1>海王星/NEPTUNE</h1>
-    </header>
-    <main class="main">
+    <header id="maintitle" v-html="maintitle"></header>
+    <main class="main" id="planet">
       <!-- 1ページ目 -->
-      <div class="infotext1">
-        <div class="title">
-          <h2>海王星の特徴</h2>
-        </div>
-        <p id="neptuneimg1"><img src="../images/neptuneinfo.gif" alt="海王星情報">海王星の大気は水素80％、ヘリウム19％、メタン2％の成分でできている。ガスでできた木星型惑星なので、大気中は時速2,000kmの強い風や嵐がふいている。<br>木星や土星にはアンモニアがふくまれ、はでな色をしていますが、天王星や海王星は、水素やヘリウムでできた大気の下に、水がいっぱいある層（そう）があって、アンモニアが水にとけこんでいる。そして、メタンが残り、メタンが赤い色をきゅうしゅうして青く見えるのだ。<br>天王星も海王星も青い色をしていて、どちらも同じような大きさで小さな惑星ですが、天王星のほうが重くできているる。木星や土星は水素とヘリウムが主成分ですが、天王星と海王星は水が主成分である。</p>
-        <div class="title">
-          <h2>計算で発見された海王星</h2>
-        </div>
-        <p>天王星の発見以降、その軌道が天文力学の計算に合わないのはその外側にさらに惑星があるためだと考えられていた。</p>
+      <div class="infotext1" v-if="text">
+        <div class="title" v-html="title1"></div>
+        <div id="neptuneimg1" v-html="text1"></div>
+        <div class="clear"></div>
       </div>
       <!-- 2ページ目 -->
-      <div class="infotext2 none">
-        <p>そのためいろいろな科学者が未知の惑星の大きさや、軌道、位置を計算していた。イギリスでは天文学者ジョン・クーチ・アダムスが、フランスでは天文学者ユルバン・ルベリエが計算をし、ルベリエの依頼を受けたドイツの天文学者ヨハン・ガレが1846年9月23日、ベルリン天文台での観測で海王星を発見したのだ。ルベリエが計算としたものと発見された位置の誤差は1度。</p>
-        <div class="title">
-          <h2>弧になっている環</h2>
-        </div>
-        <p id="neptuneimg2"><img src="../images/neptunering.jpg" alt="海王星の環">海王星にも環があり、惑星探査機「ボイジャー2号」によって発見された。環は4本発見されていますが、どれも非常に細く、何ヵ所か途切れて弧（アーク）になっている部分も。</p>
+      <div class="infotext2" v-else>
+        <div class="title" v-html="title2"></div>
+        <div v-html="text2"></div>
+        <div v-html="text3"></div>
+
+        <div class="title" v-html="title3"></div>
+        <div id="neptuneimg2" v-html="text4"></div>
+        <div class="clear"></div>
       </div>
 
       <!-- prev,nextボタン -->
       <div id="arrow">
-        <button class="pnBtn prev none">
+        <button class="pnBtn prev" @click="prevBtn" v-if="btn">
           <img src="../images/arrowprev.png" alt="戻る">
         </button>
-        <button class="pnBtn next">
+        <button class="pnBtn next" @click="nextBtn" v-else>
           <img src="../images/arrownext.png" alt="進む">
         </button>
       </div>
     </main>
   </div>
-  <script src="../js/jquery-3.3.1.min.js"></script>
   <script src="../js/three.min.js"></script>
   <script src="../js/orbitcontrols.js"></script>
+  <script src="../js/vue.min.js"></script>
   <script src="../js/planet.js"></script>
   <script src="../js/neptune.js"></script>
 </body>

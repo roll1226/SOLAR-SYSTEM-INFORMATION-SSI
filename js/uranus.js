@@ -1,15 +1,17 @@
+let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
-  $('.loadingbg1').addClass('loadingani1');
-  $('.loadingbg2').addClass('loadingani2');
-  $('.loadingbg3').addClass('loadingani3');
+  document.getElementById('loadingbg1').classList.add('loadingani1');
+  document.getElementById('loadingbg2').classList.add('loadingani2');
+  document.getElementById('loadingbg3').classList.add('loadingani3');
 }, 900);
 setTimeout(function () {
-  $('.planetloadWrap').addClass('none');
+  document.getElementById('planetloadWrap').classList.add('none');
 }, 1600);
 setTimeout(function () {
-  $('.loadingbg').addClass('none');
+  for (let i = 0; i < 3; i++) {
+    loadingbg[i].classList.add('none');
+  }
 }, 2400);
-
 
 window.addEventListener('load', init);
 let scene;
@@ -25,7 +27,7 @@ let uranusMesh;
 let ringMesh;
 let renderer;
 let light
-let width = $('#stage').width();
+let width = document.getElementById('stage').clientWidth;
 let height = innerHeight;
 
 function init() {
@@ -70,3 +72,35 @@ function init() {
     requestAnimationFrame(tick);
   }
 };
+
+let uranusText = new Vue({
+  el: '#planetloadWrap',
+  data: {
+    uranus: [{
+      text: '<p class="text text1">天</p>'
+    }, {
+      text: '<p class="text text2">王</p>'
+    }, {
+      text: '<p class="text text3">星</p>'
+    }]
+  }
+});
+
+let maintitle = new Vue({
+  el: '#maintitle',
+  data: {
+    maintitle: '<h1>天王星/URANUS</h1>'
+  }
+});
+
+planetVue.title1 = '<h2>天王星の特徴</h2>';
+planetVue.title2 = '<h2>偶然発見された惑星</h2>';
+planetVue.title3 = '<h2>星食の観測から発見された環</h2>';
+
+planetVue.text1 = ' <p><img src="../images/uranusinfo.gif" alt="天王星情報">はじめて望遠鏡をつかって観測された惑星。天王星は、ほかの惑星のなかで3番目に大きく、木星や土星と同じガス惑星である。成分の多くは水素、残りはヘリウムとメタンになっている。それから内部には、水とメタン、アンモニアの氷があって、中心には岩石の核があると言われている。メタンの雲が赤い光を吸収してしまうので、天王星は青く見えている。<br>天王星は公転軸に対して自転軸が98度も傾いている。過去に大きな天体が天王星に衝突し、その影響で自転軸が傾いてしまったのではないかとも考えられている。</p>';
+
+planetVue.text2 = '<p>天王星は1781年、イギリスの天文学者ウィリアム・ハーシェルによって発見された。彼が望遠鏡で全天の星を観測しているとき、ある星が他の恒星と違って円盤状に見えることに気づき、偶然、発見したのだ。</p>';
+
+planetVue.text3 = '<p>彼は当初、それを彗星と考えていたようですが、その後の観測によって軌道が求まり、惑星であることがわかった。</p>';
+
+planetVue.text4 = '<p><img src="../images/uranusring.jpg" alt="天王星の環">天王星には11本の環が確認されている。そのどれもが細く非常に暗いため、普通の望遠鏡で直接観測することは困難。初めて環の存在が明らかになったのは1977年、天王星が背後の恒星を隠す「天王星による恒星食」が観測されたときのこと。このとき、天王星の本体が星を隠す前後にも、恒星の光が何かにさえぎられて減光する様子が観測された。その後の分析で、この減光が環によるものだと明らかになった。環を初めて直接観測したのは惑星探査機「ボイジャー2号」が天王星に接近したときのこと。現在では、地上の望遠鏡の大型化や宇宙望遠鏡の開発などによって、天王星の環が直接撮影できるようになった。</p>';

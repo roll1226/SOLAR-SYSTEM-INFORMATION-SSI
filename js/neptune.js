@@ -1,15 +1,17 @@
+let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
-  $('.loadingbg1').addClass('loadingani1');
-  $('.loadingbg2').addClass('loadingani2');
-  $('.loadingbg3').addClass('loadingani3');
+  document.getElementById('loadingbg1').classList.add('loadingani1');
+  document.getElementById('loadingbg2').classList.add('loadingani2');
+  document.getElementById('loadingbg3').classList.add('loadingani3');
 }, 900);
 setTimeout(function () {
-  $('.planetloadWrap').addClass('none');
+  document.getElementById('planetloadWrap').classList.add('none');
 }, 1600);
 setTimeout(function () {
-  $('.loadingbg').addClass('none');
+  for (let i = 0; i < 3; i++) {
+    loadingbg[i].classList.add('none');
+  }
 }, 2400);
-
 
 window.addEventListener('load', init);
 let scene;
@@ -21,7 +23,7 @@ let geometry;
 let neptuneMesh;
 let renderer;
 let light
-let width = $('#stage').width();
+let width = document.getElementById('stage').clientWidth;
 let height = innerHeight;
 
 function init() {
@@ -60,3 +62,35 @@ function init() {
     requestAnimationFrame(tick);
   }
 };
+
+let neptuneText = new Vue({
+  el: '#planetloadWrap',
+  data: {
+    neptune: [{
+      text: '<p class="text text1">海</p>'
+    }, {
+      text: '<p class="text text2">王</p>'
+    }, {
+      text: '<p class="text text3">星</p>'
+    }]
+  }
+});
+
+let maintitle = new Vue({
+  el: '#maintitle',
+  data: {
+    maintitle: '<h1>海王星/NEPTUNE</h1>'
+  }
+});
+
+planetVue.title1 = '<h2>海王星の特徴</h2>';
+planetVue.title2 = '<h2>計算で発見された海王星</h2>';
+planetVue.title3 = '<h2>弧になっている環</h2>';
+
+planetVue.text1 = '<p><img src="../images/neptuneinfo.gif" alt="海王星情報">海王星の大気は水素80％、ヘリウム19％、メタン2％の成分でできている。ガスでできた木星型惑星なので、大気中は時速2,000kmの強い風や嵐がふいている。<br>木星や土星にはアンモニアがふくまれ、はでな色をしていますが、天王星や海王星は、水素やヘリウムでできた大気の下に、水がいっぱいある層（そう）があって、アンモニアが水にとけこんでいる。そして、メタンが残り、メタンが赤い色をきゅうしゅうして青く見えるのだ。<br>天王星も海王星も青い色をしていて、どちらも同じような大きさで小さな惑星ですが、天王星のほうが重くできているる。木星や土星は水素とヘリウムが主成分ですが、天王星と海王星は水が主成分である。</p>';
+
+planetVue.text2 = '<p>天王星の発見以降、その軌道が天文力学の計算に合わないのはその外側にさらに惑星があるためだと考えられていた。</p>';
+
+planetVue.text3 = '<p>そのためいろいろな科学者が未知の惑星の大きさや、軌道、位置を計算していた。イギリスでは天文学者ジョン・クーチ・アダムスが、フランスでは天文学者ユルバン・ルベリエが計算をし、ルベリエの依頼を受けたドイツの天文学者ヨハン・ガレが1846年9月23日、ベルリン天文台での観測で海王星を発見したのだ。ルベリエが計算としたものと発見された位置の誤差は1度。</p>';
+
+planetVue.text4 = '<p><img src="../images/neptunering.jpg" alt="海王星の環">海王星にも環があり、惑星探査機「ボイジャー2号」によって発見された。環は4本発見されていますが、どれも非常に細く、何ヵ所か途切れて弧（アーク）になっている部分も。</p>';

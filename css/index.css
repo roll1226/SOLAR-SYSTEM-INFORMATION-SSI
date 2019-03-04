@@ -128,6 +128,10 @@ button {
   animation: userIn 500ms linear 0s 1 forwards;
 }
 
+.infoBtn img {
+  width: 6vh;
+}
+
 @keyframes userIn {
   0% {
     width: 0%;
@@ -174,7 +178,6 @@ button {
   z-index: 20;
 }
 
-
 #userBack,
 #opeBack {
   position: absolute;
@@ -189,7 +192,7 @@ button {
   position: relative;
   margin: 0 auto;
   width: 80%;
-  bottom: -15vh;
+  top: 10vh;
 }
 
 /* #logout input {
@@ -213,6 +216,7 @@ button {
   border-radius: 10%;
   width: 100%;
 }
+
 
 #user {
   margin: 13vh auto 0;
@@ -400,23 +404,37 @@ button {
   letter-spacing: .2em;
 }
 
-.operationposi {
+
+#operationposi {
   position: relative;
   z-index: 30;
   margin-top: 3%;
 }
 
 .page1 {
+  position: relative;
+  z-index: 30;
+  margin-top: 6vh;
   display: flex;
   justify-content: center;
 }
 
+.page2,
+.page3 {
+  position: relative;
+  z-index: 30;
+}
+
 .operation {
+  position: relative;
+  z-index: 30;
   padding: 1vw;
   width: 27vw;
 }
 
 .text {
+  position: relative;
+  z-index: 30;
   margin-top: .7vw;
   padding: 1vw;
   padding-top: 2vh;
@@ -470,6 +488,8 @@ button {
 }
 
 .list {
+  position: relative;
+  z-index: 30;
   margin: 0 auto;
   width: 50%;
 }
@@ -607,4 +627,12 @@ button {
   height: 100vh;
   background: #000;
   opacity: .5;
+}
+
+#keyup input {
+  position: absolute;
+  width: 1px;
+  z-index: 0;
+  cursor: default;
+  outline: none;
 }

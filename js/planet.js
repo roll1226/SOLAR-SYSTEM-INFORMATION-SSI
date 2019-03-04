@@ -56,48 +56,56 @@ class crowd {
   }
 }
 
-window.addEventListener('keydown', Keydown);
-
-function Keydown(event) {
-  let keycode = event.keyCode;
-
-  //ページ以降
-  if (keycode == 39) {
-    if (!$('.infotext1').hasClass('none')) {
-      $('.infotext2').removeClass('none');
-      $('.infotext1').addClass('none');
-      $('.next').addClass('none');
-      $('.prev').removeClass('none');
-    }
-  } else if (keycode == 37) {
-    if ($('.infotext1').hasClass('none')) {
-      $('.infotext1').removeClass('none');
-      $('.infotext2').addClass('none');
-      $('.prev').addClass('none');
-      $('.next').removeClass('none');
+let planetVue = new Vue({
+  el: '#planet',
+  data: {
+    text: true,
+    btn: false,
+    title1: '',
+    title2: '',
+    title3: '',
+    title4: '',
+    text1: '',
+    text2: '',
+    text3: '',
+    text4: '',
+    text5: ''
+  },
+  methods: {
+    prevBtn: function () {
+      this.text = !this.isActive
+      this.btn = !this.btn
+    },
+    nextBtn: function () {
+      this.text = !this.text
+      this.btn = !this.btn
     }
   }
+});
+
+let loadingBGWrap = new Vue({
+  el: '#loadingBGWrap',
+  data: {
+    bgs: [{
+      bg: '<div id="loadingbg1" class="loadingbg"></div>'
+    }, {
+      bg: '<div id="loadingbg2" class="loadingbg"></div>'
+    }, {
+      bg: '<div id="loadingbg3" class="loadingbg"></div>'
+    }]
+  }
+});
+
+let back = new Vue({
+  el: '#backBtn',
+  data: {
+    back: `<form action="../index.php" method="POST">
+             <input type="submit" value="BACK" id="back" name="backcnt">
+           </form>`
+  },
+})
+
+window.location.hash = "#noback";
+window.onhashchange = function () {
+  window.location.hash = "#noback";
 };
-
-$(function () {
-  $('.prev').click(function () {
-    $('.infotext1').removeClass('none');
-    $('.infotext2').addClass('none');
-    $('.prev').addClass('none');
-    $('.next').removeClass('none');
-  });
-  $('.next').click(function () {
-    $('.infotext2').removeClass('none');
-    $('.infotext1').addClass('none');
-    $('.next').addClass('none');
-    $('.prev').removeClass('none');
-  });
-});
-
-history.pushState(null, null, null);
-$(window).on('popstate', function (event) {
-  if (!event.originalEvent.state) {
-    history.pushState(null, null, null);
-    return;
-  }
-});

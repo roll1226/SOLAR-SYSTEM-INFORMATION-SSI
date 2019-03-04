@@ -32,6 +32,7 @@ body {
 }
 
 h1 {
+  font-size: 4vh;
   text-align: center;
 }
 
@@ -42,7 +43,7 @@ h1 {
 
 .main p {
   margin-left: 1em;
-  font-size: 120%;
+  font-size: 2.3vh;
   letter-spacing: .1em;
   line-height: 1.5em;
 }
@@ -72,6 +73,7 @@ h1 {
 
 .title {
   margin-top: 1.5vh;
+  font-size: 2vh;
 }
 
 .clear {
@@ -85,6 +87,10 @@ h1 {
 .pnBtn {
   position: absolute;
   bottom: 2vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   border-radius: 100%;
   width: 3.5vw;
   height: 3.5vw;
@@ -104,18 +110,8 @@ h1 {
   left: 10vw;
 }
 
-.prev img {
-  margin-top: .7vh;
-  margin-right: .6vh;
-}
-
 .next {
   right: 10vw;
-}
-
-.next img {
-  margin-top: .7vh;
-  margin-left: .6vh;
 }
 
 .infotext2 {
@@ -123,7 +119,7 @@ h1 {
 }
 
 /* ローディング */
-.planetloadWrap {
+#planetloadWrap {
   position: relative;
   z-index: 60;
   width: 100vw;
@@ -135,7 +131,7 @@ h1 {
   margin: auto;
   position: absolute;
   z-index: 61;
-  top: 8vh;
+  top: 2vh;
   bottom: 0;
   left: 0;
   right: 0;
@@ -145,7 +141,7 @@ h1 {
 
 .text {
   position: relative;
-  font-size: 15vw;
+  font-size: 26vh;
   font-weight: bold;
   opacity: 0;
 }

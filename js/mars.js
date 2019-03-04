@@ -1,15 +1,17 @@
+let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
-  $('.loadingbg1').addClass('loadingani1');
-  $('.loadingbg2').addClass('loadingani2');
-  $('.loadingbg3').addClass('loadingani3');
+  document.getElementById('loadingbg1').classList.add('loadingani1');
+  document.getElementById('loadingbg2').classList.add('loadingani2');
+  document.getElementById('loadingbg3').classList.add('loadingani3');
 }, 700);
 setTimeout(function () {
-  $('.planetloadWrap').addClass('none');
+  document.getElementById('planetloadWrap').classList.add('none');
 }, 1400);
 setTimeout(function () {
-  $('.loadingbg').addClass('none');
+  for (let i = 0; i < 3; i++) {
+    loadingbg[i].classList.add('none');
+  }
 }, 2200);
-
 
 window.addEventListener('load', init);
 let scene;
@@ -21,7 +23,7 @@ let geometry;
 let marsMesh;
 let renderer;
 let light
-let width = $('#stage').width();
+let width = document.getElementById('stage').clientWidth;
 let height = innerHeight;
 
 function init() {
@@ -60,3 +62,33 @@ function init() {
     requestAnimationFrame(tick);
   }
 };
+
+let marsText = new Vue({
+  el: '#planetloadWrap',
+  data: {
+    mars: [{
+      text: '<p class="text text1">火</p>'
+    }, {
+      text: '<p class="text text3">星</p>'
+    }]
+  }
+});
+
+let maintitle = new Vue({
+  el: '#maintitle',
+  data: {
+    maintitle: '<h1>火星/MARS</h1>'
+  }
+});
+
+planetVue.title1 = '<h2>火星の特徴</h2>';
+planetVue.title2 = '<h2>地球に似た火星</h2>';
+planetVue.title3 = '<h2>火星探査機「のぞみ」</h2>';
+
+planetVue.text1 = '<p><img src="../images/marsinfo.gif" alt="火星情報">火星の地表の岩石の中には酸化鉄がふくまれている。火星にはわずかに酸素があり、結果、地表を酸化させている。その影響で火星は赤く見える。<br>火星にはオリンポス山、アスクレウス山、パボニス山、アルシア山といった火山や、マリナー谷がある。火山活動がおきたときに、地下の氷がとけて洪水のように流れだし、川のあとのように残っていたり、雨の流れたような痕もある。そして、地球の北極や南極と同じように、極冠とよばれる氷もあり、火星に四季があることがわかっている。</p>';
+
+planetVue.text2 = '<p>火星は、地球とにている部分が多い惑星である。四季の変化もあり、1日の長さも、24時間37分22秒と、ほぼ同じ。地球とちがうところは、太陽のまわりを1周するのに約687日もかかるため、四季の長さは地球の2倍に。そして、星は地球の約半分の大きさで、重力は1/3しかありません。</p>';
+
+planetVue.text3 = '<p><img src="../images/terraforming.jpg" alt="テラフォーミング計画">昔は火星にも、大気や海があったと考えられていたが、重力が弱かったために、大気は宇宙空間へ、海もなくなってしまった。火星の大気は、二酸化炭素95.3％、窒素2.7％、酸素0.15％、その他1.85％。そんな火星を人類が住める環境にして、移住するテラフォーミング計画もある。</p>';
+
+planetVue.text4 = '<p><img src="../images/nozomi.jpg" alt="のぞみ">1998年に日本が打ち上げた火星探査機「のぞみ」は、日本初の星探査機。火星の上層大気と太陽風との相互作用を研究、火星の磁場を観測することなどが目的であった。火星への途上でトラブルが発生し、軌道をかえて予定より遅れて火星までは到達したが、火星を周回する軌道に投入することはできなかった。</p>';
