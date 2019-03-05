@@ -68,7 +68,7 @@
       <!-- <form action="./logoutlib.php" method="post" tabindex="-1">
         <input type="submit" name="logout" value="Sign Out" tabindex="-1">
       </form> -->
-      <img src="./images/rogo.png"alt="ロゴ">
+<img src="./images/rogo.png"alt="ロゴ">
     </div>
   </div>
 
