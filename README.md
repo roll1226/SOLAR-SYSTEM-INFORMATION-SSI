@@ -3,6 +3,7 @@ HAL EVENT WEEK 1年次作成<br>
 Three.jsを使用してWEB上で太陽系を作り出す。(chrome上で動かしてください)<br>
 Vue.jsを実験的に入れてみましたが、至らない部分がございますが、ご了承ください。<br>
 <img width="600" alt="2019-02-26 22 32 32" src="https://user-images.githubusercontent.com/47688057/53486883-588f3e00-3acd-11e9-9ef7-c7a2a994602e.png">
+<img width="600" alt="2019-03-05 14 54 08" src="https://user-images.githubusercontent.com/47688057/53783861-b9e46080-3f56-11e9-8b36-1e053554bc3b.png">
 
 ## 使用言語
 * HTML
