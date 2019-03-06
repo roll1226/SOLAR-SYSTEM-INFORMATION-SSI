@@ -61,15 +61,10 @@ let planetVue = new Vue({
   data: {
     text: true,
     btn: false,
-    title1: '',
-    title2: '',
-    title3: '',
-    title4: '',
-    text1: '',
-    text2: '',
-    text3: '',
-    text4: '',
-    text5: ''
+    page1: '',
+    page2: '',
+    pBtn: `<img src="../images/arrowprev.png" alt="戻る">`,
+    nBtn: `<img src="../images/arrownext.png" alt="進む">`
   },
   methods: {
     prevBtn: function () {

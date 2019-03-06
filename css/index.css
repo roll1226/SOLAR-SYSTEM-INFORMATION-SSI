@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import '//fonts.googleapis.com/css?family=Lobster|Orbitron';
+@import "//fonts.googleapis.com/css?family=Lobster|Orbitron";
 @import "./ress.min.css";
 @import "./bg.css";
 
@@ -14,7 +14,7 @@ body {
 
 body {
   background: #000;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
   cursor: default;
 }
 
@@ -55,6 +55,12 @@ body {
   }
 }
 
+#logintime #today,
+#logintime #time {
+  font-size: 2vw;
+  font-family: "Orbitron", sans-serif;
+}
+
 #cnt p,
 .userinfo p {
   margin-top: 42vh;
@@ -67,7 +73,7 @@ body {
 }
 
 .fontType {
-  font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 button {
@@ -109,7 +115,7 @@ button {
   right: 0;
   z-index: 26;
   background: #fff;
-  opacity: .8;
+  opacity: 0.8;
 }
 
 #userWrap {
@@ -217,12 +223,11 @@ button {
   width: 100%;
 }
 
-
 #user {
   margin: 13vh auto 0;
   width: 13vw;
   height: 13vw;
-  border: solid .6vh #f00;
+  border: solid 0.6vh #f00;
   border-radius: 70%;
 }
 
@@ -253,7 +258,7 @@ button {
   }
 
   50% {
-    transform: scale(.5);
+    transform: scale(0.5);
   }
 
   100% {
@@ -271,7 +276,7 @@ button {
   }
 
   50% {
-    transform: scale(.5);
+    transform: scale(0.5);
   }
 
   100% {
@@ -401,9 +406,8 @@ button {
   text-align: center;
   font-size: 5.5vw;
   font-weight: normal;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
 }
-
 
 #operationposi {
   position: relative;
@@ -435,12 +439,12 @@ button {
 .text {
   position: relative;
   z-index: 30;
-  margin-top: .7vw;
+  margin-top: 0.7vw;
   padding: 1vw;
   padding-top: 2vh;
   width: 25vw;
   height: 8vh;
-  border: solid .3vh #0ff;
+  border: solid 0.3vh #0ff;
   border-radius: 1.5vw;
 }
 
@@ -448,12 +452,12 @@ button {
   color: #fff;
   text-align: center;
   font-size: 1.5vw;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
 }
 
 .operation img {
   width: 25vw;
-  border: solid .3vh #0ff;
+  border: solid 0.3vh #0ff;
   border-radius: 7vw;
 }
 
@@ -496,10 +500,10 @@ button {
 
 .list img {
   margin-right: 2vw;
-  padding: .3vw;
+  padding: 0.3vw;
   width: 12%;
   float: left;
-  border: solid .1vw #0ff;
+  border: solid 0.1vw #0ff;
 }
 
 .clear {
@@ -516,7 +520,7 @@ button {
   padding: 1vh;
   color: #fff;
   font-size: 2vw;
-  letter-spacing: .2em;
+  letter-spacing: 0.2em;
 }
 
 #opeBack {
@@ -546,7 +550,7 @@ button {
   background: #fff;
   border-top-left-radius: 2vw;
   border-top-right-radius: 2vw;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .micWrap p {
@@ -626,7 +630,7 @@ button {
   width: 100vw;
   height: 100vh;
   background: #000;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 #keyup input {

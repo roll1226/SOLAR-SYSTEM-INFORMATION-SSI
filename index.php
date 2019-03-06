@@ -57,19 +57,7 @@
 
   <!-- ユーザ詳細など -->
   <div class="infoWrap userinfo userOut" tabindex="-1">
-    <button id="userBack" tabindex="-1" onclick="uback();"><img src="./images/back_on.png" alt="戻るボタン"></button>
-    <div id="user" tabindex="-1">
-      <p tabindex="-1">ゲスト<br><span tabindex="-1">さん</span></p>
-    </div>
-    <div id="logintime" tabindex="-1">
-      <p tabindex="-1">--- 日時 ---<br><span id="today" tabindex="-1"></span><br><span id="time" tabindex="-1"></span></p>
-    </div>
-    <div id="logout" class="lognone" tabindex="-1">
-      <!-- <form action="./logoutlib.php" method="post" tabindex="-1">
-        <input type="submit" name="logout" value="Sign Out" tabindex="-1">
-      </form> -->
-      <img src="./images/rogo.png"alt="ロゴ">
-    </div>
+    <div v-for="item in items" v-html="item.div"></div>
   </div>
 
   <div id="btnWrap">

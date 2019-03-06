@@ -29,31 +29,17 @@
     <main class="main" id="planet">
       <!-- 1ページ目 -->
       <div class="infotext1" v-if="text">
-        <div class="title" v-html="title1"></div>
-        <div id="venusimg1" v-html="text1"></div>
-        <div class="clear"></div>
-
-        <div class="title" v-html="title2"></div>
-        <div v-html="text2"></div>
+        <div v-html="page1"></div>
       </div>
       <!-- 2ページ目 -->
       <div class="infotext2" v-else>
-        <div class="title" v-html="title3"></div>
-        <div id="venusimg2" v-html="text3"></div>
-        <div class="clear"></div>
-
-        <div class="title" v-html="title4"></div>
-        <div id="venusimg3" v-html="text4"></div>
+        <div v-html="page2"></div>
       </div>
 
       <!-- prev,nextボタン -->
       <div id="arrow">
-        <button class="pnBtn prev" @click="prevBtn" v-if="btn">
-          <img src="../images/arrowprev.png" alt="戻る">
-        </button>
-        <button class="pnBtn next" @click="nextBtn" v-else>
-          <img src="../images/arrownext.png" alt="進む">
-        </button>
+        <button class="pnBtn prev" @click="prevBtn" v-if="btn" v-html="pBtn"></button>
+        <button class="pnBtn next" @click="nextBtn" v-else v-html="nBtn"></button>
       </div>
     </main>
   </div>
