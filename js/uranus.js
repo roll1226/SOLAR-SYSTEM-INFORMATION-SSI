@@ -1,3 +1,4 @@
+// ページ遷移
 let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
   document.getElementById('loadingbg1').classList.add('loadingani1');
@@ -13,6 +14,7 @@ setTimeout(function () {
   }
 }, 2400);
 
+// メッシュ作成
 window.addEventListener('load', init);
 let scene;
 let camera;
@@ -73,7 +75,7 @@ function init() {
   }
 };
 
-let uranusText = new Vue({
+let uranusText = new Vue({ // 惑星名
   el: '#planetloadWrap',
   data: {
     uranus: [{
@@ -86,13 +88,14 @@ let uranusText = new Vue({
   }
 });
 
-let maintitle = new Vue({
+let maintitle = new Vue({ // タイトル
   el: '#maintitle',
   data: {
     maintitle: '<h1>天王星/URANUS</h1>'
   }
 });
 
+// 1ページ目
 planetVue.page1 = `<div class="title">
                      <h2>
                        天王星の特徴
@@ -118,6 +121,7 @@ planetVue.page1 = `<div class="title">
                      </p>
                    </div>`
 
+// 2ページ目
 planetVue.page2 = `<div>
                      <p>
                        彼は当初、それを彗星と考えていたようですが、その後の観測によって軌道が求まり、惑星であることがわかった。
@@ -135,3 +139,7 @@ planetVue.page2 = `<div>
                      </p>
                    </div>
                    <div class="clear"></div>`
+
+// QRコード
+qr.planet = 'uranus'
+qr.planetQR = '天王星QRコード'

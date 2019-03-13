@@ -1,3 +1,4 @@
+// ローディング
 let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
   document.getElementById('loadingbg1').classList.add('loadingani1');
@@ -13,6 +14,7 @@ setTimeout(function () {
   }
 }, 2200);
 
+// メッシュ作成
 window.addEventListener('load', init);
 let scene;
 let camera;
@@ -63,7 +65,7 @@ function init() {
   }
 };
 
-let jupiterText = new Vue({
+let jupiterText = new Vue({ // 惑星名
   el: '#planetloadWrap',
   data: {
     jupiter: [{
@@ -74,12 +76,14 @@ let jupiterText = new Vue({
   }
 });
 
-let maintitle = new Vue({
+let maintitle = new Vue({ // タイトル
   el: '#maintitle',
   data: {
     maintitle: '<h1>木星/JUPITER</h1>'
   }
 });
+
+// 1ページ目
 planetVue.page1 = `<div class="title">
                      <h2>
                        木星の特徴
@@ -103,6 +107,7 @@ planetVue.page1 = `<div class="title">
                      </p>
                    </div>`
 
+//  2ページ目
 planetVue.page2 = `<div class="title">
                      <h2>
                        太陽系最大の磁気圏
@@ -126,3 +131,7 @@ planetVue.page2 = `<div class="title">
                        <img src="../images/planet/solarsail.jpg" alt="ソーラーセイル">日本では、ソーラー電力セイルという新しい技術を使った探査機で木星を目指す計画が検討されている。ソーラー電力セイルとは、太陽の光からの電力でイオンエンジンをはたらかせて進む宇宙船と光圧を利用したソーラーセイルとを組み合わせたもの。この計画では6年かけて木星に到着し、木星を周回して外側から観測したり木星の大気へ突入して大気を観測したりする予定である。
                      </p>
                    </div>`
+
+//  QRコード
+qr.planet = 'jupiter'
+qr.planetQR = ' 木星QRコード'

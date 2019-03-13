@@ -1,5 +1,10 @@
-// 惑星
-class planet {
+// 戻り禁止
+window.location.hash = "#noback";
+window.onhashchange = function () {
+  window.location.hash = "#noback";
+};
+
+class planet { // 惑星
   constructor(planetImg, radius, widthSegments, heightSegments) {
     this.planetImg = new THREE.MeshStandardMaterial({
       map: new THREE.TextureLoader().load(planetImg)
@@ -16,8 +21,7 @@ class planet {
   }
 }
 
-// リング
-class ring {
+class ring { // リング
   constructor(ringImg, ringRadius, thetaSegments, phiSegments, thetaLength) {
     this.ringImg = new THREE.MeshStandardMaterial({
       map: new THREE.TextureLoader().load(ringImg),
@@ -36,8 +40,8 @@ class ring {
   }
 }
 
-// 雲
-class crowd {
+
+class crowd { // 雲
   constructor(croudImg, croudRdius, crowdWidthSegments, crowdHeightSegments) {
     this.croudImg = new THREE.MeshStandardMaterial({
       map: new THREE.TextureLoader().load(croudImg),
@@ -78,7 +82,7 @@ let planetVue = new Vue({
   }
 });
 
-let loadingBGWrap = new Vue({
+let loadingBGWrap = new Vue({ // background
   el: '#loadingBGWrap',
   data: {
     bgs: [{
@@ -98,9 +102,45 @@ let back = new Vue({
              <input type="submit" value="BACK" id="back" name="backcnt">
            </form>`
   },
-})
+});
 
-window.location.hash = "#noback";
-window.onhashchange = function () {
-  window.location.hash = "#noback";
-};
+let vr = new Vue({ // VR
+  el: '#vr',
+  data: {
+    vr: '',
+    vr_i: `<i class="fas fa-vr-cardboard"></i>`,
+  },
+  methods: {
+    mouseover: function () {
+      this.vr = 'vrani'
+    },
+    mouseleave: function () {
+      this.vr = ''
+    },
+    vrIn: function () {
+      qr.qrdisplay = 'dis'
+      qr.qrAni = ''
+      qr.qrImg = 'qrIn'
+    }
+  },
+});
+
+let qr = new Vue({ // QR
+  el: '#qr',
+  data: {
+    qrdisplay: 'disnone',
+    qrAni: 'none',
+    qrImg: 'qrOut',
+    planet: '',
+    planetQR: ''
+  },
+  methods: {
+    qrClick: function () {
+      setTimeout(() => {
+        this.qrdisplay = 'disnone'
+      }, 600)
+      this.qrAni = 'none'
+      this.qrImg = 'qrOut'
+    }
+  }
+})

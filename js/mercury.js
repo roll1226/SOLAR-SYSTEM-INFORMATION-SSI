@@ -1,3 +1,4 @@
+// ページ遷移
 let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
   document.getElementById('loadingbg1').classList.add('loadingani1');
@@ -13,6 +14,7 @@ setTimeout(function () {
   }
 }, 2200);
 
+// メッシュ作成
 window.addEventListener('load', init);
 let scene;
 let camera;
@@ -63,7 +65,7 @@ function init() {
   }
 };
 
-let mercuryText = new Vue({
+let mercuryText = new Vue({ // 惑星名
   el: '#planetloadWrap',
   data: {
     mercury: [{
@@ -74,12 +76,14 @@ let mercuryText = new Vue({
   }
 });
 
-let maintitle = new Vue({
+let maintitle = new Vue({ // タイトル
   el: '#maintitle',
   data: {
     maintitle: '<h1>水星/MERCURY</h1>'
   }
 });
+
+// 1ページ目
 planetVue.page1 = `<div class="title">
                      <h2>
                        水星の特徴
@@ -108,6 +112,7 @@ planetVue.page1 = `<div class="title">
                      </p>
                    </div>`
 
+// 2ページ目
 planetVue.page2 = `<div>
                      <p>
                        ギリシャでは、水星のことをヘルメスと言われている。ローマではメルクリウス、英語ではマーキュリーと呼ばれている。マーキュリーとは足が早いという意味で付けられた。
@@ -127,3 +132,7 @@ planetVue.page2 = `<div>
                      </p>
                    </div>
                    <div class="clear"></div>`
+
+// QRコード
+qr.planet = 'mercury'
+qr.planetQR = '水星QRコード'

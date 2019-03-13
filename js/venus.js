@@ -1,3 +1,4 @@
+// ページ遷移
 let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
   document.getElementById('loadingbg1').classList.add('loadingani1');
@@ -13,6 +14,7 @@ setTimeout(function () {
   }
 }, 2200);
 
+// メッシュ作成
 window.addEventListener('load', init);
 let scene;
 let camera;
@@ -63,7 +65,7 @@ function init() {
   }
 };
 
-let venusText = new Vue({
+let venusText = new Vue({ // 惑星名
   el: '#planetloadWrap',
   data: {
     venus: [{
@@ -74,13 +76,14 @@ let venusText = new Vue({
   }
 });
 
-let maintitle = new Vue({
+let maintitle = new Vue({ // タイトル
   el: '#maintitle',
   data: {
     maintitle: '<h1>金星/VENUS</h1>'
   }
 });
 
+// 1ページ目
 planetVue.page1 = `<div class="title">
                      <h2>
                        金星の特徴
@@ -108,6 +111,7 @@ planetVue.page1 = `<div class="title">
                      </p>
                    </div>`
 
+// 2ページ目
 planetVue.page2 = `<div class="title">
                      <h2>
                        地球にもっとも似ている惑星
@@ -131,3 +135,7 @@ planetVue.page2 = `<div class="title">
                      </p>
                    </div>
                    <div class="clear"></div>`
+
+// QRコード
+qr.planet = 'venus'
+qr.planetQR = '金星QRコード'

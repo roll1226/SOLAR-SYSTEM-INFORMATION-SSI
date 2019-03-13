@@ -1,3 +1,4 @@
+// ページ遷移
 let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
   document.getElementById('loadingbg1').classList.add('loadingani1');
@@ -13,6 +14,7 @@ setTimeout(function () {
   }
 }, 2400);
 
+// メッシュ作成
 window.addEventListener('load', init);
 let scene;
 let camera;
@@ -63,7 +65,7 @@ function init() {
   }
 };
 
-let neptuneText = new Vue({
+let neptuneText = new Vue({ // 惑星名
   el: '#planetloadWrap',
   data: {
     neptune: [{
@@ -76,13 +78,14 @@ let neptuneText = new Vue({
   }
 });
 
-let maintitle = new Vue({
+let maintitle = new Vue({ // タイトル
   el: '#maintitle',
   data: {
     maintitle: '<h1>海王星/NEPTUNE</h1>'
   }
 });
 
+// 1ページ目
 planetVue.page1 = `<div class="title">
                      <h2>
                        海王星の特徴
@@ -99,6 +102,7 @@ planetVue.page1 = `<div class="title">
                    </div>
                    <div class="clear"></div>`
 
+// 2ページ目
 planetVue.page2 = `<div class="title">
                      <h2>
                        計算で発見された海王星
@@ -123,3 +127,7 @@ planetVue.page2 = `<div class="title">
                      </p>
                    </div>
                    <div class="clear"></div>`
+
+// QRコード
+qr.planet = 'neptune'
+qr.planetQR = '海王星QRコード'

@@ -1,3 +1,4 @@
+// ページ遷移
 let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
   document.getElementById('loadingbg1').classList.add('loadingani1');
@@ -13,6 +14,7 @@ setTimeout(function () {
   }
 }, 2200);
 
+// メッシュ作成
 window.addEventListener('load', init);
 let scene;
 let camera;
@@ -63,7 +65,7 @@ function init() {
   }
 };
 
-let sunText = new Vue({
+let sunText = new Vue({ // 惑星名
   el: '#planetloadWrap',
   data: {
     sun: [{
@@ -74,7 +76,7 @@ let sunText = new Vue({
   }
 });
 
-let maintitle = new Vue({
+let maintitle = new Vue({ // タイトル
   el: '#maintitle',
   data: {
     maintitle: `<h1>
@@ -83,6 +85,7 @@ let maintitle = new Vue({
   }
 });
 
+// 1ページ目
 planetVue.page1 = `<div class="title">
                      <h2>
                         太陽の特徴
@@ -104,6 +107,7 @@ planetVue.page1 = `<div class="title">
                    </div>
                    <div class="clear"></div>`
 
+// 2ページ目
 planetVue.page2 = `<div class="title">
                      <h2>
                         太陽の日食
@@ -128,3 +132,7 @@ planetVue.page2 = `<div class="title">
                      <br>
                      太陽は50億年水素を燃やし続けて、その後ガスを放出し、赤色巨星となる。
                    </p>`
+
+// QRコード
+qr.planet = 'sun'
+qr.planetQR = '太陽QRコード'

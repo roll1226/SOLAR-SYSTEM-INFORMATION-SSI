@@ -22,8 +22,7 @@ function planetInbg() {
   }, 100);
 };
 
-// 太陽
-function sunPage() {
+function sunPage() { // 太陽
   planetInbg();
   setTimeout(function () {
     location.href = "./html/sun.html";
@@ -31,40 +30,36 @@ function sunPage() {
   // console.log('a')
 };
 
-// 水星
-function mercuryPage() {
+function mercuryPage() { // 水星
   planetInbg();
   setTimeout(function () {
     location.href = "./html/mercury.html";
   }, 410);
 };
 
-// 金星
-function venusPage() {
+function venusPage() { // 金星
   planetInbg();
   setTimeout(function () {
     location.href = "./html/venus.html";
   }, 410);
 };
 
-// 地球
-function earthPage() {
+function earthPage() { // 地球
   planetInbg();
   setTimeout(function () {
     location.href = "./html/earth.html";
   }, 410);
 };
 
-// 月
-function moonPage() {
+function moonPage() { // 月
   planetInbg();
   setTimeout(function () {
     location.href = "./html/moon.html";
   }, 410);
 };
 
-// 火星
-function marsPage() {
+
+function marsPage() { // 火星
   planetInbg();
   setTimeout(function () {
     location.href = "./html/mars.html";
@@ -79,24 +74,22 @@ function jupiterPage() {
   }, 410);
 };
 
-// 土星
-function saturnPage() {
+
+function saturnPage() { // 土星
   planetInbg();
   setTimeout(function () {
     location.href = "./html/saturn.html";
   }, 410);
 };
 
-// 天王星
-function uranusPage() {
+function uranusPage() { // 天王星
   planetInbg();
   setTimeout(function () {
     location.href = "./html/uranus.html";
   }, 410);
 };
 
-// 海王星
-function neptunePage() {
+function neptunePage() { // 海王星
   planetInbg();
   setTimeout(function () {
     location.href = "./html/neptune.html";
@@ -118,9 +111,7 @@ setTimeout(function () {
       }
       if (backcnt > 0) {
         document.querySelector("#stage").classList.add("plamouse");
-        document
-          .querySelector(".operationWrap")
-          .classList.remove("operationin");
+        document.querySelector(".operationWrap").classList.remove("operationin");
         document.querySelector(".operationWrap").classList.add("operationout");
       }
     }
@@ -145,10 +136,12 @@ let loading = new Vue({
               </div>`
   }
 });
-// 操作説明
-let operation = new Vue({
+
+let operation = new Vue({ // 操作説明
   el: "#operationwrap",
   data: {
+    // 1ページ目
+    opetitle: `操作説明`,
     page1: `<div class="operation" tabindex="-1">
               <img src="./images/operation_one.png" alt="クリック画像" tabindex="-1">
               <div class="text" tabindex="-1">
@@ -171,14 +164,9 @@ let operation = new Vue({
                 </li>
                 <div class="clear" tabindex="-1"></div>
                 <li tabindex="-1">
-                  <img src="./images/stop_off.png" alt="ストップボタン" tabindex="-1">惑星の動きを制御出来る。(3 段階)<br>Sキーでも可能。
+                  <img src="./images/stop_off.png" alt="ストップボタン" tabindex="-1">惑星の動きを制御出来る。(3段階)<br>Sキーでも可能。
                 </li>
                 <div class="clear" tabindex="-1"></div>
-              </ul>
-            </div>`,
-
-    page3: `<div class="list">
-              <ul tabindex="-1">
                 <li tabindex="-1">
                   <img src="./images/speech_off.png" alt="音声認識ボタン" tabindex="-1">音声入力によって惑星選択が出来る。<br>Dキーでも可能。
                 </li>
@@ -186,13 +174,16 @@ let operation = new Vue({
                 <li tabindex="-1">
                   <img src="./images/operation_off.png" alt="操作説明ボタン" tabindex="-1">操作説明表示が出来る。 <br>Fキーでも可能。
                 </li>
-                <div class="clear" tabindex="-1"></div>
+                <li>
+                  <i class="fas fa-vr-cardboard fa-4x"></i>
+                  <br>
+                  VR機能あり！（使用には携帯が必要です）
+                </li>
               </ul>
             </div>`,
 
     p1: true,
     p2: false,
-    p3: false,
     pbtn: false,
     nbtn: true,
     opeback: '<img src="./images/ope_back.png" alt="戻るボタン" tabindex="-1">',
@@ -214,10 +205,6 @@ let operation = new Vue({
         this.pbtn = !this.pbtn;
         this.p1 = !this.p1;
         this.p2 = !this.p2;
-      } else if (this.p3 == true) {
-        // 3ページ目
-        this.p2 = !this.p2;
-        this.p3 = !this.p3;
         this.nbtn = !this.nbtn;
       }
     },
@@ -227,28 +214,23 @@ let operation = new Vue({
         this.pbtn = !this.pbtn;
         this.p1 = !this.p1;
         this.p2 = !this.p2;
-      } else if (this.p2 == true) {
-        // 3ページ目
-        this.p2 = !this.p2;
-        this.p3 = !this.p3;
         this.nbtn = !this.nbtn;
       }
     }
   }
 });
 
-// ユーザ
-let btnWrapU = new Vue({
+let btnWrapU = new Vue({ // ユーザ
   el: "#userWrap",
   data: {
-    imgChange: true
+    imgChange: '_off'
   },
   methods: {
     mouseover: function () {
-      this.imgChange = !this.imgChange;
+      this.imgChange = '_on';
     },
     mouseleave: function () {
-      this.imgChange = !this.imgChange;
+      this.imgChange = '_off';
     }
   }
 });
@@ -282,14 +264,14 @@ let userWrap = new Vue({
 let btnWrapS = new Vue({
   el: "#stopWrap",
   data: {
-    imgChange: true
+    imgChange: '_off'
   },
   methods: {
     mouseover: function () {
-      this.imgChange = !this.imgChange;
+      this.imgChange = '_on';
     },
     mouseleave: function () {
-      this.imgChange = !this.imgChange;
+      this.imgChange = '_off';
     }
   }
 });
@@ -298,17 +280,18 @@ let btnWrapS = new Vue({
 let btnWrapA = new Vue({
   el: "#speechWrap",
   data: {
-    imgChange: true
+    imgChange: '_off'
   },
   methods: {
     mouseover: function () {
-      this.imgChange = !this.imgChange;
+      this.imgChange = '_on';
     },
     mouseleave: function () {
-      this.imgChange = !this.imgChange;
+      this.imgChange = '_off';
     }
   }
 });
+
 let mic = new Vue({
   el: "#mic",
   data: {
@@ -327,14 +310,14 @@ let mic = new Vue({
 let btnWrapO = new Vue({
   el: "#opewrapbtn",
   data: {
-    imgChange: true
+    imgChange: '_off'
   },
   methods: {
     mouseover: function () {
-      this.imgChange = !this.imgChange;
+      this.imgChange = '_on';
     },
     mouseleave: function () {
-      this.imgChange = !this.imgChange;
+      this.imgChange = '_off';
     }
   }
 });
@@ -357,6 +340,7 @@ let bggo = new Vue({
     ]
   }
 });
+
 Vue.config.keyCodes = {
   su: 49,
   su: [49],
@@ -412,6 +396,50 @@ let body = new Vue({
     },
     n: function () {
       neptunePage();
+    }
+  }
+});
+
+// VR
+let vr = new Vue({
+  el: '#vr',
+  data: {
+    vr: '',
+    vr_i: `<i class="fas fa-vr-cardboard"></i>`,
+  },
+  methods: {
+    mouseover: function () {
+      this.vr = 'vrani'
+    },
+    mouseleave: function () {
+      this.vr = ''
+    },
+    vrIn: function () {
+      qr.qrdisplay = 'dis'
+      qr.qrAni = ''
+      qr.qrImg = 'qrIn'
+      document.getElementById('stage').classList.remove('plamouse');
+    }
+  },
+});
+
+// QR
+let qr = new Vue({
+  el: '#qr',
+  data: {
+    qrdisplay: 'disnone',
+    qrAni: 'none',
+    qrImg: 'qrOut',
+    img: `<img src="../images/qr/planet.png" alt=" 惑星QRコード">`
+  },
+  methods: {
+    qrClick: function () {
+      setTimeout(() => {
+        this.qrdisplay = 'disnone'
+      }, 600)
+      this.qrAni = 'none'
+      this.qrImg = 'qrOut'
+      document.getElementById('stage').classList.add('plamouse');
     }
   }
 });
@@ -1342,55 +1370,97 @@ recognition.addEventListener("result", function (e) {
   let speechtext = e.results[0][0].transcript;
   switch (speechtext) {
     case "太陽":
-      sunPage();
       // console.log(e.results[0][0].transcript);
+      sunPage();
+      break;
+    case "3":
+      // console.log(e.results[0][0].transcript);
+      sunPage();
       break;
     case "彗星":
-      mercuryPage();
       // console.log(e.results[0][0].transcript);
+      mercuryPage();
+      break;
+    case "マーキュリー":
+      // console.log(e.results[0][0].transcript);
+      mercuryPage();
       break;
     case "きんせい":
-      venusPage();
       // console.log(e.results[0][0].transcript);
+      venusPage();
+      break;
+    case "ヴィーナス":
+      // console.log(e.results[0][0].transcript);
+      venusPage();
       break;
     case "地球":
-      earthPage();
       // console.log(e.results[0][0].transcript);
+      earthPage();
+      break;
+    case "アース":
+      // console.log(e.results[0][0].transcript);
+      earthPage();
       break;
     case "月":
-      moonPage();
       // console.log(e.results[0][0].transcript);
+      moonPage();
+      break;
+    case "ムーン":
+      // console.log(e.results[0][0].transcript);
+      moonPage();
       break;
     case "火星":
-      marsPage();
       // console.log(e.results[0][0].transcript);
+      marsPage();
+      break;
+    case "まず":
+      // console.log(e.results[0][0].transcript);
+      marsPage();
+      break;
+    case "まーず":
+      // console.log(e.results[0][0].transcript);
+      marsPage();
       break;
     case "木星":
-      jupiterPage();
       // console.log(e.results[0][0].transcript);
+      jupiterPage();
+      break;
+    case "ジュピター":
+      // console.log(e.results[0][0].transcript);
+      jupiterPage();
       break;
     case "土星":
-      saturnPage();
       // console.log(e.results[0][0].transcript);
+      saturnPage();
+      break;
+    case "サターン":
+      // console.log(e.results[0][0].transcript);
+      saturnPage();
       break;
     case "天王星":
-      uranusPage();
       // console.log(e.results[0][0].transcript);
+      uranusPage();
+      break;
+    case "ウラヌス":
+      // console.log(e.results[0][0].transcript);
+      uranusPage();
       break;
     case "海王星":
-      neptunePage();
       // console.log(e.results[0][0].transcript);
+      neptunePage();
       break;
-    default:
-      // その他
-      //alert(e.results[0][0].transcript);
+    case "ネプチューン":
+      // console.log(e.results[0][0].transcript);
+      neptunePage();
+      break;
+    default: // その他
+      // console.log(e.results[0][0].transcript);
       document.querySelector(".speechBtn").classList.remove("speechout");
       document.querySelector("#stage").classList.remove("speechopen");
       document.querySelector(".micWrap").classList.remove("micIn");
       document.querySelector(".micWrap").classList.add("micOut");
       document.querySelector(".masc").classList.add("none");
       clearTimeout(speechtime);
-      // console.log(e.results[0][0].transcript);
       break;
   }
 });

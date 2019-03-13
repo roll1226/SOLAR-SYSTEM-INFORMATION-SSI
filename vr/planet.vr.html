@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>惑星s/VR</title>
+  <script src="./js/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-text id="sunText" value="太陽" font="./font/custom-msdf.json" negate="false" scale="3 3 3" position="5 -1.5 -1" color="#fff" rotation="0 -80" opacity="0"></a-text>
+    <a-text id="mercuryText" value="水星" font="./font/custom-msdf.json" negate="false" scale="3 3 3" position="5 -2 3" color="#fff" rotation="0 -120 0" opacity="0"></a-text>
+    <a-text id="venusText" value="金星" font="./font/custom-msdf.json" negate="false" scale="3 3 3" position="2 -2 6" color="#fff" rotation="0 190" opacity="0"></a-text>
+    <a-text id="earthText" value="地球" font="./font/custom-msdf.json" negate="false" scale="3 3 3" position="-2 -2 5" color="#fff" rotation="0 150" opacity="0"></a-text>
+    <a-text id="moonText" value="月" font="./font/custom-msdf.json" negate="false" scale="5 5 5" position="-8 -3.2 6" color="#fff" rotation="0 130" opacity="0"></a-text>
+    <a-text id="marsText" value="火星" font="./font/custom-msdf.json" negate="false" scale="3 3 3" position="-6 -2 0.5" color="#fff" rotation="0 100" opacity="0"></a-text>
+    <a-text id="jupiterText" value="木星" font="./font/custom-msdf.json" negate="false" scale="3 3 3" position="-5 -1.7 -2" color="#fff" rotation="0 59 0" opacity="0"></a-text>
+    <a-text id="saturnText" value="土星" font="./font/custom-msdf.json" negate="false" scale="3 3 3" position="-2.5 -1.7 -4" color="#fff" rotation="0 20" opacity="0"></a-text>
+    <a-text id="uranusText" value="天王星" font="./font/custom-msdf.json" negate="false" scale="3 3 3" position="0 -2 -5" color="#fff" rotation="0 -5" opacity="0"></a-text>
+    <a-text id="neptuneText" value="海王星" font="./font/custom-msdf.json" negate="false" scale="3 3 3" position="4.5 -2.5 -4.5" color="#fff" rotation="0 -50" opacity="0"></a-text>
+
+    <a-camera id="camera" position="0 0" rotation="17.188733853924703 -214.85917317405844">
+      <a-entity cursor="fuse: true; fuseTimeout: 500" position="0 0 -1" geometry="primitive: ring" scale="0.0010000000000000009 0.0010000000000000009 0.0010000000000000009" material="color: #fff" animation__enter="property: scale; startEvents: mouseenter; from: 0.03 0.03 0.03; to: 0.001 0.001 0.001; dur: 500" animation____click="property: scale; startEvents: mouseleave; from: 0.001 0.001 0.001; to: 0.03 0.03 0.03; dur: 100">
+      </a-entity>
+    </a-camera>
+
+    <!-- 太陽 -->
+    <a-sphere position="10 0" radius="2.5" src="../images/sun.jpg" id="sun" scale="0.8 0.8 0.8" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 20000;" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 700; to: 1 1 1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.8 0.8 0.8">
+    </a-sphere>
+
+    <!-- 水星 -->
+    <a-sphere position="7 0 5.5" radius="2.5" src="../images/mercury.jpg" id="mercury" scale="0.8 0.8 0.8" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 20000;" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 700; to: 1 1 1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.8 0.8 0.8">
+    </a-sphere>
+
+    <!-- 金星 -->
+    <a-sphere position="2 0 8.5" radius="2.5" src="../images/venus.jpg" id="venus" scale="0.8 0.8 0.8" animation="property: rotation; to: 0 -360 0; loop: true; easing: linear; dur: 20000" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 700; to: 1 1 1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.8 0.8 0.8">
+    </a-sphere>
+
+    <!-- 地球 -->
+    <a-sphere position="-4 0 8" radius="2.5" src="../images/earth.jpg" id="earth" scale="0.8 0.8 0.8" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 20000">
+    </a-sphere>
+    <!-- 雲 -->
+    <a-sphere position="-4 0 8" radius="2.6" src="../images/crowd.png" opacity="0.9" id="crowd" scale="0.8 0.8 0.8" animation="property: rotation; to: 0 360 360; loop: true; easing: linear; dur: 20000" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 700; to: 1 1 1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.8 0.8 0.8"></a-sphere>
+
+    <!-- 月 -->
+    <a-sphere position="-9 0 5.5" radius="2.5" src="../images/moon.jpg" id="moon" scale="0.8 0.8 0.8" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 20000" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 700; to: 1 1 1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.8 0.8 0.8">
+    </a-sphere>
+
+    <!-- 火星 -->
+    <a-sphere position="-10 0" radius="2.5" src="../images/mars.jpg" id="mars" scale="0.8 0.8 0.8" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 20000" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 700; to: 1 1 1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.8 0.8 0.8">
+    </a-sphere>
+
+    <!-- 木星 -->
+    <a-sphere position="-9.5 0 -5.2" radius="2.5" src="../images/jupiter.jpg" id="jupiter" scale="0.8 0.8 0.8" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 20000" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 700; to: 1 1 1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.8 0.8 0.8" rotation="">
+    </a-sphere>
+
+    <!-- 土星 -->
+    <a-sphere position="-3.7 0 -8" radius="2.5" src="../images/saturn.jpg" id="saturn" geometry="" scale="0.8 0.8 0.8" animation="property: rotation; to: 0 360 0; loop: true; easing: linear; dur: 20000" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 700; to: 1 1 1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.8 0.8 0.8">
+    </a-sphere>
+    <a-ring id="saturnRing" position="-3.7 0 -8" rotation="65 60" radius-inner="3" radius-outer="4.1" color="#EAD0B6" opacity="0.9" scale="0.8 0.8 0.8"></a-ring>
+
+    <!-- 天王星 -->
+    <a-sphere position="2.2 0 -8.5" radius="2.5" src="../images/uranus.jpg" id="uranus" scale="0.8 0.8 0.8" rotation="-219.1452346619736 0 90" animation="property: rotation; to: -360 0 90; easing: linear; dur: 20000; loop: true;" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 700; to: 1 1 1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.8 0.8 0.8">
+    </a-sphere>
+    <a-ring id="uranusRing" position="2 0 -8.5" rotation="10 -50" radius-inner="2.6" radius-outer="3.7" color="#D1E1E8" opacity="0.9" material="" geometry="" scale="0.8 0.8 0.8" animation__click="property: scale; to: 0.8 0.8 0.8; dur: 500; easing: easeInCubic; loop: 1"></a-ring>
+
+    <!-- 海王星 -->
+    <a-sphere position="7 0 -5.5" radius="2.5" src="../images/neptune.jpg" id="neptune" scale="0.8 0.8 0.8" animation="property: rotation; to: 0 360 0; easing: linear; dur: 20000; loop: true;" animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 700; to: 1 1 1" animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; from: 1 1 1; to: 0.8 0.8 0.8">
+    </a-sphere>
+
+    <a-sky src="../images/space.jpg"></a-sky>
+  </a-scene>
+  <script src="./js/planet.vrr.js"></script>
+</body>
+</html>

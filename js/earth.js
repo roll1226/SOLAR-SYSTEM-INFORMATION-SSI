@@ -1,3 +1,4 @@
+// ローディング
 let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
   document.getElementById('loadingbg1').classList.add('loadingani1');
@@ -13,6 +14,7 @@ setTimeout(function () {
   }
 }, 2200);
 
+// メッシュ作成
 window.addEventListener('load', init);
 let scene;
 let camera;
@@ -84,13 +86,14 @@ let earthText = new Vue({
   }
 });
 
-let maintitle = new Vue({
+let maintitle = new Vue({ // 惑星名
   el: '#maintitle',
   data: {
     maintitle: '<h1>地球/EARTH</h1>'
   }
 });
 
+// 1ページ目
 planetVue.page1 = `<div class="title">
                      <h2>
                        地球の特徴
@@ -114,6 +117,7 @@ planetVue.page1 = `<div class="title">
                      </p>
                    </div>`
 
+// 2ページ目
 planetVue.page2 = `<div class="title">
                      <h2>磁気圏</h2>
                    </div>
@@ -127,3 +131,7 @@ planetVue.page2 = `<div class="title">
                        <img src="../images/planet/earth4.jpg" alt="オーロラ">この地磁気は地球を取り巻いて磁気圏を形成しており、地球の大気だけでは防ぎきれない、生物にとって有害な太陽風や宇宙線などをある程度防ぐバリアの役割を果たしている。また、磁気圏が強い太陽風を受けることで磁気嵐が発生し、地球の極地方でオーロラが見られる原因になっている。
                      </p>
                    </div>`
+
+// QRコード
+qr.planet = 'earth'
+qr.planetQR = '地球QRコード'

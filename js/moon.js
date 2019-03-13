@@ -1,3 +1,4 @@
+// ページ遷移
 let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
   document.getElementById('loadingbg1').classList.add('loadingani1');
@@ -13,6 +14,7 @@ setTimeout(function () {
   }
 }, 2200);
 
+// メッシュ作成
 window.addEventListener('load', init);
 let scene;
 let camera;
@@ -63,7 +65,7 @@ function init() {
   }
 };
 
-let moonText = new Vue({
+let moonText = new Vue({ // 惑星名
   el: '#planetloadWrap',
   data: {
     moon: [{
@@ -76,7 +78,7 @@ let moonText = new Vue({
   }
 });
 
-let maintitle = new Vue({
+let maintitle = new Vue({ // タイトル
   el: '#maintitle',
   data: {
     maintitle: '<h1>月/MOON</h1>'
@@ -123,3 +125,7 @@ planetVue.page2 = `<div class="title">
                        <img src="../images/planet/kaguya.jpg" alt="かぐや">「かぐや」は月のまわりを周回しながら15種類の装置を使って月を探査し、月表面の元素組成、鉱物組成、地形、表面付近の地下構造、磁気異常、重力場の観測を全域に行う。これらの観測によって、総合的に月の起源・進化の解明に迫ると期待されており、月の全球地図を作成したり高度データを取得したりしたほか、表と裏で重力場に違いがあることや地下構造に層状構造があること、月の裏側の一部では従来考えられていたよりも最近までマグマ活動があったことなどがわかった。
                      </p>
                    </div>`
+
+// QRコード
+qr.planet = 'moon'
+qr.planetQR = '月QRコード'

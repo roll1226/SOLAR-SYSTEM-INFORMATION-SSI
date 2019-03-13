@@ -1,3 +1,4 @@
+// ページ遷移
 let loadingbg = document.getElementsByClassName("loadingbg");
 setTimeout(function () {
   document.getElementById("loadingbg1").classList.add("loadingani1");
@@ -13,6 +14,7 @@ setTimeout(function () {
   }
 }, 2200);
 
+// メッシュ作成
 window.addEventListener("load", init);
 let scene;
 let camera;
@@ -73,7 +75,7 @@ function init() {
   }
 };
 
-let saturnText = new Vue({
+let saturnText = new Vue({ // 惑星名
   el: '#planetloadWrap',
   data: {
     saturn: [{
@@ -84,13 +86,14 @@ let saturnText = new Vue({
   }
 });
 
-let maintitle = new Vue({
+let maintitle = new Vue({ // タイトル
   el: '#maintitle',
   data: {
     maintitle: '<h1>土星/SATURN</h1>'
   }
 });
 
+// 1ページ目
 planetVue.page1 = `<div class="title">
                      <h2>
                        土星の特徴
@@ -116,6 +119,7 @@ planetVue.page1 = `<div class="title">
                      </p>
                    </div>`
 
+// 2ページ目
 planetVue.page2 = `<div id="saturnimg2">
                      <p>
                        <img src="../images/planet/saturnring.jpg" alt="土星の環">1675年にはフランスの天文学者ジョバンニ・カッシーニが、土星の環は複数の細い環からできていて、隙間が開いている部分があることを発見した。最も幅が広い隙間は「カッシーニの間隙」と呼ばれている。
@@ -134,3 +138,7 @@ planetVue.page2 = `<div id="saturnimg2">
                        土星の環は、地球の公転軌道面に対して約26度傾いている。そのため、土星の公転につれて、地球から見える環の傾きが変わる。そして、環はその厚さが最大でも数百mしかないため、真横から見ると地球からは見えなくなってしまう。環の消失は約15年ごとに起こる。
                      </p>
                    </div>`
+
+// QRコード
+qr.planet = 'saturn'
+qr.planetQR = '土星QRコード'

@@ -228,3 +228,100 @@ h1 {
 .none {
   display: none;
 }
+
+/* VR */
+#vr {
+  position: absolute;
+  z-index: 30;
+  bottom: 8%;
+  left: 43%;
+  color: #fff;
+  transform-origin: center center;
+}
+
+.vrani {
+  animation: vr 300ms linear 0s forwards;
+}
+
+@keyframes vr {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(-15deg);
+  }
+
+  100%,
+  40% {
+    transform: rotate(0deg);
+  }
+
+  60% {
+    transform: rotate(15deg);
+  }
+}
+
+/* QRcode */
+#qr {
+  position: absolute;
+  z-index: 33;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#qr #msc {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: rgba(170, 170, 170, 0.6);
+}
+
+#qr img {
+  border-radius: 10%;
+}
+
+.disnone {
+  display: none;
+}
+
+.dis {
+  display: block;
+}
+
+.qrOut {
+  animation: qrOut 500ms cubic-bezier(.38, -0.5, .62, .89) 0s forwards;
+}
+
+@keyframes qrOut {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-90vh);
+  }
+}
+
+.qrIn {
+  animation: qrIn 500ms cubic-bezier(.74, .82, .6, 1.32) 0s forwards;
+}
+
+@keyframes qrIn {
+  from {
+    transform: translateY(-90vh);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+#vr i {
+  font-size: 4.5vw;
+}

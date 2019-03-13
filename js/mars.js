@@ -1,3 +1,4 @@
+// ページ遷移
 let loadingbg = document.getElementsByClassName('loadingbg');
 setTimeout(function () {
   document.getElementById('loadingbg1').classList.add('loadingani1');
@@ -13,6 +14,7 @@ setTimeout(function () {
   }
 }, 2200);
 
+// メッシュ作成
 window.addEventListener('load', init);
 let scene;
 let camera;
@@ -63,7 +65,7 @@ function init() {
   }
 };
 
-let marsText = new Vue({
+let marsText = new Vue({ // 惑星名
   el: '#planetloadWrap',
   data: {
     mars: [{
@@ -74,13 +76,14 @@ let marsText = new Vue({
   }
 });
 
-let maintitle = new Vue({
+let maintitle = new Vue({ // タイトル
   el: '#maintitle',
   data: {
     maintitle: '<h1>火星/MARS</h1>'
   }
 });
 
+// 1ページ目
 planetVue.page1 = `<div class="title">
                      <h2>
                        火星の特徴
@@ -104,6 +107,7 @@ planetVue.page1 = `<div class="title">
                      </p>
                    </div>`
 
+// 2ページ目
 planetVue.page2 = `<div id="marsimg2">
                      <p>
                        <img src="../images/planet/mars1.jpg" alt="テラフォーミング計画">昔は火星にも、大気や海があったと考えられていたが、重力が弱かったために、大気は宇宙空間へ、海もなくなってしまった。火星の大気は、二酸化炭素95.3％、窒素2.7％、酸素0.15％、その他1.85％。そんな火星を人類が住める環境にして、移住するテラフォーミング計画もある。
@@ -121,3 +125,7 @@ planetVue.page2 = `<div id="marsimg2">
                        <img src="../images/planet/nozomi.jpg" alt="のぞみ">1998年に日本が打ち上げた火星探査機「のぞみ」は、日本初の星探査機。火星の上層大気と太陽風との相互作用を研究、火星の磁場を観測することなどが目的であった。火星への途上でトラブルが発生し、軌道をかえて予定より遅れて火星までは到達したが、火星を周回する軌道に投入することはできなかった。
                      </p>
                    </div>`
+
+// QRコード
+qr.planet = 'mars'
+qr.planetQR = '火星QRコード'
