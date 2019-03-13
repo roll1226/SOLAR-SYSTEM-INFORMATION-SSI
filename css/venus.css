@@ -1,0 +1,59 @@
+@charset "utf-8";
+@import "./ress.min.css";
+@import "./planet.css";
+
+.text {
+  color: #ff0;
+}
+
+#info {
+  border: solid .5vw #bb0;
+}
+
+.pnBtn {
+  background: #bb0;
+}
+
+.pnBtn:hover {
+  box-shadow: 0 0 2.5vw #bb0;
+}
+
+#venusimg1 img {
+  margin-right: 1vw;
+  width: 18vw;
+  float: right;
+}
+
+#venusimg2 img {
+  margin-right: 1vw;
+  width: 25vw;
+  float: left;
+}
+
+#venusimg3 img {
+  margin-left: 1vw;
+  width: 16vw;
+  float: right;
+}
+
+.loadingani1,
+.loadingani2,
+.loadingani3 {
+  transform-origin: bottom left;
+}
+
+.loadingbg {
+  bottom: 0;
+  left: 0;
+  transform: rotate(90deg);
+}
+
+@keyframes loadingbg {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(90deg);
+  }
+}

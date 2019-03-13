@@ -1,0 +1,60 @@
+@charset "utf-8";
+@import "./ress.min.css";
+@import "./planet.css";
+
+.text {
+  color: #0f2;
+}
+
+#info {
+  border: solid .5vw #0a0;
+}
+
+.pnBtn {
+  background: #0a0;
+}
+
+.pnBtn:hover {
+  box-shadow: 0 0 2.5vw #0a0;
+}
+
+#jupiterimg1 img {
+  margin-left: 1vw;
+  width: 17vw;
+  float: right;
+}
+
+#jupiterimg2 img {
+  margin-left: 1vw;
+  width: 13vw;
+  float: right;
+}
+
+#jupiterimg3 img {
+  margin-top: .5vh;
+  margin-right: 1vw;
+  width: 14vw;
+  float: left;
+}
+
+.loadingani1,
+.loadingani2,
+.loadingani3 {
+  transform-origin: bottom right;
+}
+
+.loadingbg {
+  bottom: 0;
+  right: 0;
+  transform: rotate(90deg);
+}
+
+@keyframes loadingbg {
+  from {
+    transform: rotate(90deg);
+  }
+
+  to {
+    transform: rotate(-90deg);
+  }
+}
