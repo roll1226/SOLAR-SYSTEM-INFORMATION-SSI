@@ -3,7 +3,8 @@ HAL EVENT WEEK 1年次作成<br>
 Three.jsを使用してWEB上で太陽系を作り出す。(chrome上で動かしてください)<br>
 Vue.jsを実験的に入れてみましたが、至らない部分がございますが、ご了承ください。<br>
 <img width="600" alt="2019-02-26 22 32 32" src="https://user-images.githubusercontent.com/47688057/53486883-588f3e00-3acd-11e9-9ef7-c7a2a994602e.png">
-<img width="600" alt="2019-03-05 14 54 08" src="https://user-images.githubusercontent.com/47688057/53783861-b9e46080-3f56-11e9-8b36-1e053554bc3b.png">
+<img width="600" alt="2019-03-05 14 54 08" src="https://user-images.githubusercontent.com/47688057/53783861-b9e46080-3f56-11e9-8b36-1e053554bc3b.png"><br>
+VRページ用のQRコードはレンタルサーバーなのでHEWの期間が終わり次第閉じます。
 
 ## 使用言語
 * HTML
@@ -12,6 +13,7 @@ Vue.jsを実験的に入れてみましたが、至らない部分がござい�
 * Three.js
 * Vue.js
 * Web Speech API
+* A-Frame
 
 ## セットアップ
 Three.jsはローカル上でないと画像を読み込んでくれませんのでXAMPP上などに保存してください。
@@ -30,4 +32,5 @@ Web Speech APIやGoogle Fontを使用しているためインターネットが�
 [Qiita Webページでブラウザの音声認識機能を使おう - Web Speech API Speech Recognition](https://qiita.com/hmmrjn/items/4b77a86030ed0071f548)<br>
 [Vue.js入門](http://www.tohoho-web.com/ex/vuejs.html#hello_world)<br>
 [太陽系探検隊](http://www.susutan.com/)<br>
-[NASA Image and Video Library](https://images.nasa.gov/)
+[NASA Image and Video Library](https://images.nasa.gov/)<br>
+[A-Frame](https://aframe.io/)
