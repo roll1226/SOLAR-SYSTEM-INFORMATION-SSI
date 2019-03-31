@@ -444,12 +444,6 @@ let qr = new Vue({
   }
 });
 
-// 戻り禁止
-window.location.hash = "#noback";
-window.onhashchange = function () {
-  window.location.hash = "#noback";
-};
-
 // ユーザ
 function ubtn() {
   if (!document.querySelector("#stage").classList.contains("speechopen")) {
