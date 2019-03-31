@@ -71,7 +71,7 @@ h1 {
   transition: all 600ms;
 }
 
-#back:hover {
+#back button:hover {
   border-radius: 100%;
   background: #fff;
   color: #000;
