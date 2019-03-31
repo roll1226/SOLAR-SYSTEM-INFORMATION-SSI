@@ -57,6 +57,8 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
+  text-decoration: none;
+  color: block;
   width: 7vw;
   height: 7vw;
   padding: .8vh .3vw;
