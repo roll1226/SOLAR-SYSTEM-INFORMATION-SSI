@@ -712,7 +712,7 @@ let manifest = [{
   }, // 木星
   {
     id: "saturn",
-    src: "./images/saturn.jpg"
+    src: "../images/saturn.jpg"
   }, // 土星
   {
     id: "saturn-ring",
