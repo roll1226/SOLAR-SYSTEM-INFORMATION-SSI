@@ -239,7 +239,7 @@ let userWrap = new Vue({
   el: '.infoWrap',
   data: {
     items: [{
-      div: `<button id="userBack" tabindex="-1" onclick="uback();"><img src="./images/back_on.png" alt="戻るボタン"></button>`
+      div: `<button id="userBack" tabindex="-1" onclick="uback();"><img src="../images/back_on.png" alt="戻るボタン"></button>`
     }, {
       div: `<div id="user" tabindex="-1">
               <p tabindex="-1">
