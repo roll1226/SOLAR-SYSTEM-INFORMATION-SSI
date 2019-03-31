@@ -50,6 +50,7 @@ h1 {
 
 #back {
   display: block;
+  cursor: pointer;
   position: absolute;
   display: flex;
   flex-flow: row nowrap;
@@ -68,6 +69,7 @@ h1 {
   border-radius: .5vw;
   font-size: 1.5vw;
   transition: all 600ms;
+  cu
 }
 
 #back:hover {
