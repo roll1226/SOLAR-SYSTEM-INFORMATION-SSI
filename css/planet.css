@@ -48,6 +48,14 @@ h1 {
   line-height: 1.5em;
 }
 
+#backwrap {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 #back {
   display: block;
   padding: .8vh .3vw;

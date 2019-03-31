@@ -98,7 +98,9 @@ let loadingBGWrap = new Vue({ // background
 let back = new Vue({
   el: '#backBtn',
   data: {
-    back: `<a id="back">BACK</a>`
+    back: `<div id="backwrap">
+             <a id="back">BACK</a>
+           </div>`
   },
 });
 
