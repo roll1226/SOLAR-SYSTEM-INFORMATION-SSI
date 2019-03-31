@@ -98,9 +98,7 @@ let loadingBGWrap = new Vue({ // background
 let back = new Vue({
   el: '#backBtn',
   data: {
-    back: `<form action="./index.html" method="POST">
-             <input type="submit" value="BACK" id="back" name="backcnt">
-           </form>`
+    back: `<a id="back">BACK</a>`
   },
 });
 
