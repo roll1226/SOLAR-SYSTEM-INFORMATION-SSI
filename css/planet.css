@@ -48,24 +48,21 @@ h1 {
   line-height: 1.5em;
 }
 
-#backwrap {
+#back {
+  display: block;
+  position: absolute;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-#back {
-  display: block;
+  width: 7vw;
+  height: 7vw;
   padding: .8vh .3vw;
   margin-bottom: 4vh;
-  position: absolute;
   top: 4%;
   left: 2%;
   z-index: 30;
-  width: 7vw;
-  height: 7vw;
   border: solid .4vh #fff;
   color: #fff;
   border-radius: .5vw;
