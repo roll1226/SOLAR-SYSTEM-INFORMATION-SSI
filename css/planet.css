@@ -49,31 +49,31 @@ h1 {
 }
 
 #back {
-  cursor: pointer;
   position: absolute;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 7vw;
-  height: 7vw;
-  padding: .8vh .3vw;
-  margin-bottom: 4vh;
+  z-index: 30;
   top: 4%;
   left: 2%;
-  z-index: 30;
+}
+
+#back a {
+  cursor: pointer;
+  padding: .8vh .3vw;
+  margin-bottom: 4vh;
   border: solid .4vh #fff;
   color: #fff;
   border-radius: .5vw;
   font-size: 1.5vw;
   transition: all 600ms;
-}
-
-#back a {
   display: block;
   text-decoration: none;
   color: block;
+  width: 7vw;
+  height: 7vw;
 }
 
 #back:hover {
