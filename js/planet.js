@@ -99,7 +99,7 @@ let back = new Vue({
   el: '#backBtn',
   data: {
     back: `<div id="back">
-             <a href="./index.html">BACK</a>
+             <button onClick='location.href = "./index.html";'>BACK</button>
            </div>`
   },
 });
