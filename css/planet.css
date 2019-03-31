@@ -49,6 +49,7 @@ h1 {
 }
 
 #back {
+  display: block;
   padding: .8vh .3vw;
   margin-bottom: 4vh;
   position: absolute;
