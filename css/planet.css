@@ -48,7 +48,7 @@ h1 {
   line-height: 1.5em;
 }
 
-#back {
+#back button {
   cursor: pointer;
   position: absolute;
   display: flex;
