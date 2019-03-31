@@ -25,7 +25,7 @@ function planetInbg() {
 function sunPage() { // 太陽
   planetInbg();
   setTimeout(function () {
-    location.href = "./html/sun.html";
+    location.href = "./sun.html";
   }, 410);
   // console.log('a')
 };
@@ -33,28 +33,28 @@ function sunPage() { // 太陽
 function mercuryPage() { // 水星
   planetInbg();
   setTimeout(function () {
-    location.href = "./html/mercury.html";
+    location.href = "./mercury.html";
   }, 410);
 };
 
 function venusPage() { // 金星
   planetInbg();
   setTimeout(function () {
-    location.href = "./html/venus.html";
+    location.href = "./venus.html";
   }, 410);
 };
 
 function earthPage() { // 地球
   planetInbg();
   setTimeout(function () {
-    location.href = "./html/earth.html";
+    location.href = "./earth.html";
   }, 410);
 };
 
 function moonPage() { // 月
   planetInbg();
   setTimeout(function () {
-    location.href = "./html/moon.html";
+    location.href = "./moon.html";
   }, 410);
 };
 
@@ -62,7 +62,7 @@ function moonPage() { // 月
 function marsPage() { // 火星
   planetInbg();
   setTimeout(function () {
-    location.href = "./html/mars.html";
+    location.href = "./mars.html";
   }, 410);
 };
 
@@ -70,7 +70,7 @@ function marsPage() { // 火星
 function jupiterPage() {
   planetInbg();
   setTimeout(function () {
-    location.href = "./html/jupiter.html";
+    location.href = "./jupiter.html";
   }, 410);
 };
 
@@ -78,21 +78,21 @@ function jupiterPage() {
 function saturnPage() { // 土星
   planetInbg();
   setTimeout(function () {
-    location.href = "./html/saturn.html";
+    location.href = "./saturn.html";
   }, 410);
 };
 
 function uranusPage() { // 天王星
   planetInbg();
   setTimeout(function () {
-    location.href = "./html/uranus.html";
+    location.href = "./uranus.html";
   }, 410);
 };
 
 function neptunePage() { // 海王星
   planetInbg();
   setTimeout(function () {
-    location.href = "./html/neptune.html";
+    location.href = "./neptune.html";
   }, 410);
 };
 
@@ -129,7 +129,7 @@ let loading = new Vue({
   el: "#loading",
   data: {
     loading: `<div class="loadingimg loadingIn" tabindex="-1">
-                <img src="./images/loadingimage.png" alt="ローリング画像" tabindex="-1">
+                <img src="../images/loadingimage.png" alt="ローリング画像" tabindex="-1">
                 <div id="cnt" tabindex="-1">
                   <p tabindex="-1"><span class="count fontType">0</span>％</p>
                 </div>
@@ -143,14 +143,14 @@ let operation = new Vue({ // 操作説明
     // 1ページ目
     opetitle: `操作説明`,
     page1: `<div class="operation" tabindex="-1">
-              <img src="./images/operation_one.png" alt="クリック画像" tabindex="-1">
+              <img src="../images/operation_one.png" alt="クリック画像" tabindex="-1">
               <div class="text" tabindex="-1">
                 <p tabindex="-1">①惑星を選択すると...？</p>
               </div>
             </div>
             <p class="arrow" tabindex="-1">&gt;</p>
             <div class="operation" tabindex="-1">
-              <img src="./images/operation_twe.png" alt="勉強例" tabindex="-1">
+              <img src="../images/operation_twe.png" alt="勉強例" tabindex="-1">
               <div class="text" tabindex="-1">
                 <p tabindex="-1">②誰よりも物知りに！</p>
               </div>
@@ -160,19 +160,19 @@ let operation = new Vue({ // 操作説明
     page2: `<div class="list">
               <ul>
                 <li tabindex="-1">
-                <img src="./images/user_off.png" alt="ユーザーボタン" tabindex="-1"> アカウント管理が出来る。<br>Aキーでも可能。
+                <img src="../images/user_off.png" alt="ユーザーボタン" tabindex="-1"> アカウント管理が出来る。<br>Aキーでも可能。
                 </li>
                 <div class="clear" tabindex="-1"></div>
                 <li tabindex="-1">
-                  <img src="./images/stop_off.png" alt="ストップボタン" tabindex="-1">惑星の動きを制御出来る。(3段階)<br>Sキーでも可能。
+                  <img src="../images/stop_off.png" alt="ストップボタン" tabindex="-1">惑星の動きを制御出来る。(3段階)<br>Sキーでも可能。
                 </li>
                 <div class="clear" tabindex="-1"></div>
                 <li tabindex="-1">
-                  <img src="./images/speech_off.png" alt="音声認識ボタン" tabindex="-1">音声入力によって惑星選択が出来る。<br>Dキーでも可能。
+                  <img src="../images/speech_off.png" alt="音声認識ボタン" tabindex="-1">音声入力によって惑星選択が出来る。<br>Dキーでも可能。
                 </li>
                 <div class="clear" tabindex="-1"></div>
                 <li tabindex="-1">
-                  <img src="./images/operation_off.png" alt="操作説明ボタン" tabindex="-1">操作説明表示が出来る。 <br>Fキーでも可能。
+                  <img src="../images/operation_off.png" alt="操作説明ボタン" tabindex="-1">操作説明表示が出来る。 <br>Fキーでも可能。
                 </li>
                 <li>
                   <i class="fas fa-vr-cardboard fa-4x"></i>
@@ -186,7 +186,7 @@ let operation = new Vue({ // 操作説明
     p2: false,
     pbtn: false,
     nbtn: true,
-    opeback: '<img src="./images/ope_back.png" alt="戻るボタン" tabindex="-1">',
+    opeback: '<img src="../images/ope_back.png" alt="戻るボタン" tabindex="-1">',
     items: [{
         bg: '<div class="stars" tabindex="-1"></div>'
       },
@@ -254,7 +254,7 @@ let userWrap = new Vue({
             </div>`
     }, {
       div: `<div id="logout" class="lognone" tabindex="-1">
-              <img src="./images/rogo.png"alt="ロゴ">
+              <img src="../images/rogo.png"alt="ロゴ">
           </div>`
     }]
   }
@@ -690,31 +690,31 @@ let manager;
 // テクスチャーリスト
 let manifest = [{
     id: "sun",
-    src: "./images/sun.jpg"
+    src: "../images/sun.jpg"
   }, // 太陽
   {
     id: "mercury",
-    src: "./images/mercury.jpg"
+    src: "../images/mercury.jpg"
   }, // 水星
   {
     id: "venus",
-    src: "./images/venus.jpg"
+    src: "../images/venus.jpg"
   }, // 金星
   {
     id: "earth",
-    src: "./images/earth.jpg"
+    src: "../images/earth.jpg"
   }, // 地球
   {
     id: "crowd",
-    src: "./images/crowd.png"
+    src: "../images/crowd.png"
   }, // 雲
   {
     id: "mars",
-    src: "./images/mars.jpg"
+    src: "../images/mars.jpg"
   }, // 火星
   {
     id: "jupiter",
-    src: "./images/jupiter.jpg"
+    src: "../images/jupiter.jpg"
   }, // 木星
   {
     id: "saturn",
@@ -722,27 +722,27 @@ let manifest = [{
   }, // 土星
   {
     id: "saturn-ring",
-    src: "./images/saturn-ring.jpg"
+    src: "../images/saturn-ring.jpg"
   }, // 土星の輪
   {
     id: "uranus",
-    src: "./images/uranus.jpg"
+    src: "../images/uranus.jpg"
   }, // 天王星
   {
     id: "uranus-ring",
-    src: "./images/uranus-ring.jpg"
+    src: "../images/uranus-ring.jpg"
   }, // 天王星の輪
   {
     id: "neptune",
-    src: "./images/neptune.jpg"
+    src: "../images/neptune.jpg"
   }, // 海王星
   {
     id: "universe",
-    src: "./images/space.jpg"
+    src: "../images/space.jpg"
   }, // 宇宙空間
   {
     id: "moon",
-    src: "./images/moon.jpg"
+    src: "../images/moon.jpg"
   } //月
 ];
 
@@ -1215,70 +1215,70 @@ class text {
 }
 
 // 太陽テキスト
-sunimageText = new text("./images/suntext.png");
+sunimageText = new text("../images/suntext.png");
 sunText = new THREE.Sprite(sunimageText.TextImg);
 sunText.position.y = 64;
 sunText.scale.set(50, 35, 50);
 targetTextSun.push(sunText);
 
 // 水星テキスト
-mercuryimageText = new text("./images/mercurytext.png");
+mercuryimageText = new text("../images/mercurytext.png");
 mercuryText = new THREE.Sprite(mercuryimageText.TextImg);
 mercuryText.position.y = 15;
 mercuryText.scale.set(40, 27, 40);
 targetTextMercury.push(mercuryText);
 
 // 金星テキスト
-venusimageText = new text("./images/venustext.png");
+venusimageText = new text("../images/venustext.png");
 venusText = new THREE.Sprite(venusimageText.TextImg);
 venusText.position.y = 20;
 venusText.scale.set(40, 27, 40);
 targetTextVenus.push(venusText);
 
 // 地球テキスト
-earthimageText = new text("./images/earthtext.png");
+earthimageText = new text("../images/earthtext.png");
 earthText = new THREE.Sprite(earthimageText.TextImg);
 earthText.position.y = 25;
 earthText.scale.set(40, 27, 40);
 targetTextEarth.push(earthText);
 
 // 月テキスト
-moonimageText = new text("./images/moontext.png");
+moonimageText = new text("../images/moontext.png");
 moonText = new THREE.Sprite(moonimageText.TextImg);
 moonText.position.y = 16;
 moonText.scale.set(17, 17, 17);
 targetTextMoon.push(moonText);
 
 // 火星テキスト
-marsimageText = new text("./images/marstext.png");
+marsimageText = new text("../images/marstext.png");
 marsText = new THREE.Sprite(marsimageText.TextImg);
 marsText.position.y = 19;
 marsText.scale.set(40, 27, 40);
 targetTextMars.push(marsText);
 
 // 木星テキスト
-jupiterimageText = new text("./images/jupitertext.png");
+jupiterimageText = new text("../images/jupitertext.png");
 jupiterText = new THREE.Sprite(jupiterimageText.TextImg);
 jupiterText.position.y = 53;
 jupiterText.scale.set(40, 27, 40);
 targetTextJupiter.push(jupiterText);
 
 // 土星テキスト
-saturnimageText = new text("./images/saturntext.png");
+saturnimageText = new text("../images/saturntext.png");
 saturnText = new THREE.Sprite(saturnimageText.TextImg);
 saturnText.position.y = 25;
 saturnText.scale.set(40, 27, 40);
 targetTextSaturn.push(saturnText);
 
 // 天王星テキスト
-uranusimageText = new text("./images/uranustext.png");
+uranusimageText = new text("../images/uranustext.png");
 uranusText = new THREE.Sprite(uranusimageText.TextImg);
 uranusText.position.y = 25;
 uranusText.scale.set(50, 20, 40);
 targetTextUranus.push(uranusText);
 
 // 海王星テキスト
-neptuneimageText = new text("./images/neptunetext.png");
+neptuneimageText = new text("../images/neptunetext.png");
 neptuneText = new THREE.Sprite(neptuneimageText.TextImg);
 neptuneText.position.y = 27;
 neptuneText.scale.set(50, 20, 40);
