@@ -1,98 +1,35 @@
-// ページ遷移
-let loadingbg = document.getElementsByClassName('loadingbg');
-setTimeout(function () {
-  document.getElementById('loadingbg1').classList.add('loadingani1');
-  document.getElementById('loadingbg2').classList.add('loadingani2');
-  document.getElementById('loadingbg3').classList.add('loadingani3');
-}, 900);
-setTimeout(function () {
-  document.getElementById('planetloadWrap').classList.add('none');
-}, 1600);
-setTimeout(function () {
-  for (let i = 0; i < 3; i++) {
-    loadingbg[i].classList.add('none');
-  }
-}, 2400);
+initLoadingAnimation({ ani: 900, title: 1600, bg: 2400 });
 
-// メッシュ作成
-window.addEventListener('load', init);
-let scene;
-let camera;
-let controls;
-let uranus = new planet('../images/uranus.jpg', 33, 20, 20);
-let hoop = new ring('../images/uranus-ring.jpg', 45, 10, 2, 1000);
-let materialUranus;
-let materialRing;
-let geometryUranus;
-let geometryRing;
-let uranusMesh;
-let ringMesh;
-let renderer;
-let light
-let width = document.getElementById('stage').clientWidth;
-let height = innerHeight;
+window.addEventListener('load', function () {
+  const uranusPlanet = new planet('../images/uranus.jpg', 33, 20, 20);
+  const uranusRing   = new ring('../images/uranus-ring.jpg', 45, 10, 2, 1000);
+  const { scene, camera, controls, renderer } = createPlanetScene();
 
-function init() {
-  renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#stage'),
-  });
-  renderer.setSize(width, height);
-
-  scene = new THREE.Scene();
-
-  camera = new THREE.PerspectiveCamera(45, width / height);
-  camera.position.set(0, 0, 200);
-  controls = new THREE.OrbitControls(camera);
-  controls.minDistance = 200;
-  controls.maxDistance = 200;
-  controls.enableDamping = true;
-  controls.enableKeys = false;
-  controls.enablePan = false;
-  controls.dampingFactor = 0.6;
-
-  light = new THREE.AmbientLight(0xFFFFFF, 2.0);
-  scene.add(light);
-
-  materialUranus = uranus.Material;
-
-  materialRing = hoop.Material;
-
-  geometryUranus = uranus.Geometry;
-  geometryRing = hoop.Geometry;
-  uranusMesh = new THREE.Mesh(geometryUranus, materialUranus);
-  ringMesh = new THREE.Mesh(geometryRing, materialRing);
+  const uranusMesh = new THREE.Mesh(uranusPlanet.Geometry, uranusPlanet.Material);
+  const ringMesh   = new THREE.Mesh(uranusRing.Geometry, uranusRing.Material);
   scene.add(uranusMesh);
   scene.add(ringMesh);
 
-  tick();
-
-  function tick() {
+  startRenderLoop(scene, camera, controls, renderer, function () {
     uranusMesh.rotation.y += 0.005;
-    ringMesh.rotation.x = 1.5;
-    controls.update();
-    renderer.render(scene, camera);
-    requestAnimationFrame(tick);
-  }
-};
+    ringMesh.rotation.x    = 1.5;
+  });
+});
 
-let uranusText = new Vue({ // 惑星名
+new Vue({
   el: '#planetloadWrap',
   data: {
-    uranus: [{
-      text: '<p class="text text1">天</p>'
-    }, {
-      text: '<p class="text text2">王</p>'
-    }, {
-      text: '<p class="text text3">星</p>'
-    }]
+    uranus: [
+      { text: '<p class="text text1">天</p>' },
+      { text: '<p class="text text2">王</p>' },
+      { text: '<p class="text text3">星</p>' }
+    ]
   }
 });
 
-let maintitle = new Vue({ // タイトル
+new Vue({
   el: '#maintitle',
-  data: {
-    maintitle: '<h1>天王星/URANUS</h1>'
-  }
+  data: { maintitle: '<h1>天王星/URANUS</h1>' }
 });
 
 // 1ページ目
@@ -141,5 +78,5 @@ planetVue.page2 = `<div>
                    <div class="clear"></div>`
 
 // QRコード
-qr.planet = 'uranus'
-qr.planetQR = '天王星QRコード'
+qr.planet   = 'uranus';
+qr.planetQR = '天王星QRコード';

@@ -1,0 +1,18 @@
+{
+  "name": "solar-system-information",
+  "version": "1.0.0",
+  "description": "Interactive 3D solar system viewer",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ]
+  }
+}

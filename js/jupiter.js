@@ -1,86 +1,30 @@
-// ローディング
-let loadingbg = document.getElementsByClassName('loadingbg');
-setTimeout(function () {
-  document.getElementById('loadingbg1').classList.add('loadingani1');
-  document.getElementById('loadingbg2').classList.add('loadingani2');
-  document.getElementById('loadingbg3').classList.add('loadingani3');
-}, 700);
-setTimeout(function () {
-  document.getElementById('planetloadWrap').classList.add('none');
-}, 1400);
-setTimeout(function () {
-  for (let i = 0; i < 3; i++) {
-    loadingbg[i].classList.add('none');
-  }
-}, 2200);
+initLoadingAnimation();
 
-// メッシュ作成
-window.addEventListener('load', init);
-let scene;
-let camera;
-let controls;
-let jupiter = new planet('../images/jupiter.jpg', 50, 20, 20);
-let material;
-let geometry;
-let jupiterMesh;
-let renderer;
-let light
-let width = document.getElementById('stage').clientWidth;
-let height = innerHeight;
+window.addEventListener('load', function () {
+  const jupiterPlanet = new planet('../images/jupiter.jpg', 50, 20, 20);
+  const { scene, camera, controls, renderer } = createPlanetScene();
 
-function init() {
-  renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('#stage'),
-  });
-  renderer.setSize(width, height);
-
-  scene = new THREE.Scene();
-
-  camera = new THREE.PerspectiveCamera(45, width / height);
-  camera.position.set(0, 0, 200);
-  controls = new THREE.OrbitControls(camera);
-  controls.minDistance = 200;
-  controls.maxDistance = 200;
-  controls.enableDamping = true;
-  controls.enableKeys = false;
-  controls.enablePan = false;
-  controls.dampingFactor = 0.6;
-
-  light = new THREE.AmbientLight(0xFFFFFF, 2.0);
-  scene.add(light);
-
-  material = jupiter.Material;
-
-  geometry = jupiter.Geometry;
-  jupiterMesh = new THREE.Mesh(geometry, material);
+  const jupiterMesh = new THREE.Mesh(jupiterPlanet.Geometry, jupiterPlanet.Material);
   scene.add(jupiterMesh);
 
-  tick();
-
-  function tick() {
+  startRenderLoop(scene, camera, controls, renderer, function () {
     jupiterMesh.rotation.y += 0.005;
-    controls.update();
-    renderer.render(scene, camera);
-    requestAnimationFrame(tick);
-  }
-};
+  });
+});
 
-let jupiterText = new Vue({ // 惑星名
+new Vue({
   el: '#planetloadWrap',
   data: {
-    jupiter: [{
-      text: '<p class="text text1">木</p>'
-    }, {
-      text: '<p class="text text3">星</p>'
-    }]
+    jupiter: [
+      { text: '<p class="text text1">木</p>' },
+      { text: '<p class="text text3">星</p>' }
+    ]
   }
 });
 
-let maintitle = new Vue({ // タイトル
+new Vue({
   el: '#maintitle',
-  data: {
-    maintitle: '<h1>木星/JUPITER</h1>'
-  }
+  data: { maintitle: '<h1>木星/JUPITER</h1>' }
 });
 
 // 1ページ目
@@ -107,7 +51,7 @@ planetVue.page1 = `<div class="title">
                      </p>
                    </div>`
 
-//  2ページ目
+// 2ページ目
 planetVue.page2 = `<div class="title">
                      <h2>
                        太陽系最大の磁気圏
@@ -132,6 +76,6 @@ planetVue.page2 = `<div class="title">
                      </p>
                    </div>`
 
-//  QRコード
-qr.planet = 'jupiter'
-qr.planetQR = ' 木星QRコード'
+// QRコード
+qr.planet   = 'jupiter';
+qr.planetQR = '木星QRコード';
