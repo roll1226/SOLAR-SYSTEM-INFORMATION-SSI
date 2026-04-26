@@ -126,33 +126,7 @@ function navigateToPlanet(name) {
 }
 
 // ============ ローディング ============
-
-setTimeout(function () {
-  let num = 0;
-  const tgt = 100;
-  const speed = 8;
-  const counter = setInterval(function () {
-    if (num <= tgt) {
-      document.querySelector('.count').innerText = num;
-      num++;
-      if (num === tgt) {
-        document.querySelector('.loading').classList.add('loadingOut');
-        document.querySelector('.loadingimg').classList.add('loadingOut');
-      }
-      if (backcnt > 0) {
-        document.querySelector('#stage').classList.add('plamouse');
-        document.querySelector('.operationWrap').classList.remove('operationin');
-        document.querySelector('.operationWrap').classList.add('operationout');
-      }
-    } else {
-      clearInterval(counter);
-    }
-  }, speed);
-}, 700);
-
-setTimeout(function () {
-  document.getElementById('stage').classList.add('moveani');
-}, 1500);
+// progress / complete は loadQueue イベントで制御（下部参照）
 
 // ============ Vue インスタンス ============
 
@@ -647,7 +621,21 @@ const manifest = [
 
 const loadQueue = new createjs.LoadQueue();
 
+loadQueue.on('progress', function (e) {
+  document.querySelector('.count').innerText = Math.floor(e.progress * 100);
+});
+
 loadQueue.on('complete', function () {
+  document.querySelector('.count').innerText = 100;
+  document.querySelector('.loading').classList.add('loadingOut');
+  document.querySelector('.loadingimg').classList.add('loadingOut');
+
+  if (backcnt > 0) {
+    document.querySelector('#stage').classList.add('plamouse');
+    document.querySelector('.operationWrap').classList.remove('operationin');
+    document.querySelector('.operationWrap').classList.add('operationout');
+  }
+
   // 画像 → THREE.Texture 変換
   const textures = {};
   manifest.forEach(function (item) {
@@ -663,6 +651,10 @@ loadQueue.on('complete', function () {
   });
 
   render();
+
+  setTimeout(function () {
+    document.getElementById('stage').classList.add('moveani');
+  }, 800);
 });
 
 loadQueue.loadManifest(manifest);
