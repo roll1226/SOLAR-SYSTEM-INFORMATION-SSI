@@ -68,7 +68,7 @@ class Cloud {
  * @param {object} delays - { ani: number, title: number, bg: number }
  */
 function initLoadingAnimation(delays) {
-  const d = Object.assign({ ani: 700, title: 1400, bg: 2200 }, delays);
+  const d = Object.assign({ ani: 300, title: 800, bg: 1400 }, delays);
   const loadingbg = document.getElementsByClassName('loadingbg');
 
   setTimeout(function () {

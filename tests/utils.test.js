@@ -205,23 +205,17 @@ describe('navigateToPlanet()', () => {
     jest.useRealTimers();
   });
 
-  test('planetInbg() を呼び出した後、410ms後に location.href をセットする', () => {
-    jest.useFakeTimers();
+  test('正しい URL にナビゲートする', () => {
     navigateToPlanet('earth');
-    expect(window.location.href).toBe('');
-    jest.advanceTimersByTime(410);
     expect(window.location.href).toBe('./earth.html');
   });
 
   test('各惑星名で正しい URL にナビゲートする', () => {
     const planets = Object.keys(PLANET_ROUTES);
     planets.forEach(name => {
-      jest.useFakeTimers();
       window.location.href = '';
       navigateToPlanet(name);
-      jest.advanceTimersByTime(410);
       expect(window.location.href).toBe(PLANET_ROUTES[name]);
-      jest.useRealTimers();
     });
   });
 });

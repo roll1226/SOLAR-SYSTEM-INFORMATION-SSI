@@ -119,10 +119,39 @@ function planetInbg() {
 }
 
 function navigateToPlanet(name) {
-  planetInbg();
-  setTimeout(function () {
+  if (!(name in pickTargets) || pickTargets[name].mesh.length === 0) {
     location.href = PLANET_ROUTES[name];
-  }, 410);
+    return;
+  }
+
+  const mesh = pickTargets[name].mesh[0];
+  const worldPos = new THREE.Vector3();
+  mesh.getWorldPosition(worldPos);
+
+  const projected = worldPos.clone().project(camera);
+  const px = ((projected.x + 1) / 2 * 100).toFixed(1);
+  const py = ((-projected.y + 1) / 2 * 100).toFixed(1);
+  document.documentElement.style.setProperty('--zoom-x', px + '%');
+  document.documentElement.style.setProperty('--zoom-y', py + '%');
+
+  controls.enabled = false;
+  const startPos = camera.position.clone();
+  const endPos = worldPos.clone().lerp(startPos, 0.3);
+  const duration = 500;
+  const startTime = performance.now();
+
+  function animateZoom(now) {
+    const t = Math.min((now - startTime) / duration, 1);
+    const eased = t * t * (3 - 2 * t);
+    camera.position.lerpVectors(startPos, endPos, eased);
+    camera.lookAt(worldPos);
+    if (t < 1) {
+      requestAnimationFrame(animateZoom);
+    } else {
+      location.href = PLANET_ROUTES[name];
+    }
+  }
+  requestAnimationFrame(animateZoom);
 }
 
 // ============ ローディング ============

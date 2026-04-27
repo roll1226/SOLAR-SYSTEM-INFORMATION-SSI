@@ -3,6 +3,30 @@
 @import "./ress.min.css";
 @import "./bg.css";
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: zoom-into-planet 500ms ease-in forwards;
+  transform-origin: var(--zoom-x, 50%) var(--zoom-y, 50%);
+}
+
+::view-transition-new(root) {
+  animation: none;
+}
+
+@keyframes zoom-into-planet {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
 html,
 body {
   overflow: hidden;

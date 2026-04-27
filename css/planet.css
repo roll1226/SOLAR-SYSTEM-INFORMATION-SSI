@@ -1,6 +1,29 @@
 @charset "utf-8";
 @import "//fonts.googleapis.com/css?family=Sawarabi+Mincho";
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  display: none;
+}
+
+::view-transition-new(root) {
+  animation: zoom-from-planet 400ms ease-out forwards;
+}
+
+@keyframes zoom-from-planet {
+  from {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 html,
 body {
   overflow: hidden;
